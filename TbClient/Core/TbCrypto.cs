@@ -203,7 +203,7 @@ public static class TbCrypto
         return sb.ToString();
     }
 
-    public static string CuidGalaxy2(string? androidId)
+    public static string CuidGalaxy2(string androidId)
     {
         var androidIdBytes = Encoding.UTF8.GetBytes(androidId);
         if (androidIdBytes.Length != 16)
@@ -214,7 +214,7 @@ public static class TbCrypto
         return TbcCuidGalaxy2(androidIdBytes);
     }
 
-    public static string? C3Aid(string? androidId, string? uuid)
+    public static string? C3Aid(string androidId, string uuid)
     {
         var androidIdBytes = Encoding.UTF8.GetBytes(androidId);
         var uuidBytes = Encoding.UTF8.GetBytes(uuid);

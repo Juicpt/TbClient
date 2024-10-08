@@ -3,7 +3,7 @@
 public class FragTiebaPlus : IFrag
 {
     public string Text { get; set; } = "";
-    public Uri Url { get; set; }
+    public required Uri Url { get; set; }
 
     public static FragTiebaPlus FromTbData(PbContent dataProto)
     {

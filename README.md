@@ -4,9 +4,13 @@ C#版本贴吧操作库
 
 ---
 
+[![NuGet version (TbClient)](https://img.shields.io/nuget/v/TbClient.svg?style=flat-square)](https://www.nuget.org/packages/TbClient/)
+
+---
+
 ## 安装
 ``` shell
-nuget install TbClient 
+dotnet add package TbClient
 ```
 
 ## 尝试一下

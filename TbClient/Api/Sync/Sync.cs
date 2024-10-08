@@ -25,7 +25,7 @@ public class Sync(HttpCore httpCore) : BaseApiRequest<ValueTuple<string, string>
     {
         var data = new List<KeyValuePair<string, string>>()
         {
-            new("BDUSS", httpCore.Account.Bduss),
+            new("BDUSS", httpCore!.Account!.Bduss),
             new("_client_version", Const.MainVersion),
             new("cuid", httpCore.Account.CuidGalaxy2)
         };

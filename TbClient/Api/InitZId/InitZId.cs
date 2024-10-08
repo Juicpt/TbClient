@@ -16,7 +16,7 @@ public class InitZId(HttpCore httpCore) : BaseApiRequest<string>
 
     public override async Task<string> RequestAsync()
     {
-        var account = httpCore.Account;
+        var account = httpCore.Account!;
         var xyus = GetMd5Hash(account.AndroidId + account.Uuid);
         var xyusMd5Str = GetMd5Hash(xyus).ToLower();
         var currentTs = DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString();
@@ -49,7 +49,7 @@ public class InitZId(HttpCore httpCore) : BaseApiRequest<string>
 
     public override string ParseBody(string body)
     {
-        var account = httpCore.Account;
+        var account = httpCore.Account!;
         var xyus = GetMd5Hash(account.AndroidId + account.Uuid);
         var xyusMd5Str = GetMd5Hash(xyus).ToLower();
         var resJson = JObject.Parse(body);

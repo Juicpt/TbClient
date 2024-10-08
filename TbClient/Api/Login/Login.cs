@@ -26,7 +26,7 @@ public class Login(HttpCore httpCore) : BaseApiRequest<ValueTuple<UserInfoLogin,
         var data = new List<KeyValuePair<string, string>>()
         {
             new("_client_version", Const.MainVersion),
-            new("bdusstoken", httpCore.Account.Bduss)
+            new("bdusstoken", httpCore!.Account!.Bduss)
         };
         var requestUri = new UriBuilder("https", Const.AppBaseHost, 443, "/c/s/login").Uri;
         var responseMessage = await httpCore.PackAppFormRequest(requestUri, data);

@@ -225,7 +225,7 @@ public class Content
             video = FragVideo.FromTbData(threadInfo.VideoInfo);
         }
 
-        if (threadInfo.VoiceInfo is { Count: > 0 })
+        if (threadInfo?.VoiceInfo is { Count: > 0 })
         {
             voice = FragVoice.FromTbData(threadInfo.VoiceInfo[0]);
         }

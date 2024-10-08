@@ -4,8 +4,8 @@ namespace TbClient.Api.GetThreads.Entities;
 
 public class ShareThread
 {
-    public Content Content { get; set; }
-    public string Title { get; set; }
+    public required Content Content { get; set; }
+    public string Title { get; set; } = "";
     public long AuthorId { get; set; }
     public long Fid { get; set; } = 0;
     public string Fname { get; set; } = "";

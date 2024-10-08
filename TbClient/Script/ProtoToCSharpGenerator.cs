@@ -38,10 +38,10 @@ public class ProtoToCSharpGenerator
     static void GenerateCSharpCode(string protoFile)
     {
         // 获取 proto 文件所在的目录
-        string directory = Path.GetDirectoryName(protoFile);
+        var directory = Path.GetDirectoryName(protoFile);
 
         // 生成 C# 文件命令
-        string command = $"protoc --csharp_opt=serializable --csharp_out={directory} --proto_path={directory} -I {BaseDirectory} {protoFile}";
+        var command = $"protoc --csharp_opt=serializable --csharp_out={directory} --proto_path={directory} -I {BaseDirectory} {protoFile}";
     
         // 执行命令
         RunCommand(command);

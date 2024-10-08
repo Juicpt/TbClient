@@ -5,15 +5,15 @@ namespace TbClient.Api.GetThreads.Entities;
 
 public class Thread
 {
-    public Content Content { get; set; }
+    public required Content Content { get; set; }
     public string Title { get; set; } = "";
     public long Fid { get; set; } = 0;
     public string Fname { get; set; } = "";
     public long Tid { get; set; } = 0;
     public long Pid { get; set; } = 0;
-    public UserInfoT User { get; set; }
+    public UserInfoT? User { get; set; }
     public long AuthorId { get; set; } = 0;
-    public VirtualImagePf VirtualImage { get; set; }
+    public required VirtualImagePf VirtualImage { get; set; }
     public int Type { get; set; } = 0;
     public int TabId;
     public bool IsGood { get; set; } = false;
@@ -58,7 +58,7 @@ public class Thread
             Agree = threadInfo.Agree.AgreeNum,
             Disagree = threadInfo.Agree.DisagreeNum,
             CreateTime = threadInfo.CreateTime,
-            UpdateTime = threadInfo.LastTimeInt
+            UpdateTime = threadInfo.LastTimeInt,
         };
     }
 

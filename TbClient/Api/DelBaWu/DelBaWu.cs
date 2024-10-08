@@ -7,8 +7,8 @@ namespace TbClient.Api.DelBawu;
 public class ClearBawuTeamParams
 {
     public int Fid { get; set; }
-    public string Portrait { get; set; }
-    public string BaWuType { get; set; }
+    public string Portrait { get; set; } = "";
+    public string BaWuType { get; set; } = "";
 }
 
 public class DelBaWu(HttpCore httpCore) : BaseApiRequest<ClearBawuTeamParams, bool>
@@ -37,7 +37,7 @@ public class DelBaWu(HttpCore httpCore) : BaseApiRequest<ClearBawuTeamParams, bo
         };
 
         var requestUri = new UriBuilder("https", Const.WebBaseHost, 443, "/mo/q/bawuteamclear").Uri;
-        var request = httpCore.PackWebFormRequest(requestUri, data);
+        var request = await httpCore.PackWebFormRequest(requestUri, data);
 
         // var body = await core.NetCore.SendRequestAsync(request);
         // ParseBody(body);

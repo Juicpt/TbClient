@@ -17,13 +17,13 @@ public class Account(string bduss = "", string stoken = "")
     private byte[]? _aesCbcSecKey;
     private Aes? _aesCbcCipher;
 
-    public string? AndroidId
+    public string AndroidId
     {
         get => _androidId ??= BitConverter.ToString(RandomNumberGenerator.GetBytes(8)).Replace("-", "").ToLower();
         set => _androidId = value;
     }
 
-    public string? Uuid
+    public string Uuid
     {
         get => _uuid ??= Guid.NewGuid().ToString();
         set => _uuid = value;

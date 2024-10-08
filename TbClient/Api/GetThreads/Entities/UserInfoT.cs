@@ -5,8 +5,8 @@ namespace TbClient.Api.GetThreads.Entities;
 public class UserInfoT
 {
     public long UserId { get; set; }
-    public string UserName { get; set; }
-    public string Portrait { get; set; }
+    public string UserName { get; set; } = "";
+    public string Portrait { get; set; } = "";
     public string NickNameNew { get; init; } = "";
     public int Level { get; init; }
     public uint GLevel { get; init; }
@@ -18,10 +18,10 @@ public class UserInfoT
     public PrivLike PrivLike { get; init; }
     public PrivReply PrivReply { get; init; }
 
-    public new string NickName => NickNameNew;
+    public string NickName => NickNameNew;
     public string ShowName => NickNameNew == "" ? UserName : NickNameNew;
 
-    public new string LogName =>
+    public string LogName =>
         UserName != "" ? UserName : Portrait != "" ? $"{NickNameNew}/{Portrait}" : UserId.ToString();
 
     public static UserInfoT FromTbData(User dataProto)

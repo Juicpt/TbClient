@@ -1,17 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Authors>Juicpt</Authors>
         <UserSecretsId>8bd67551-0cb1-4639-b33c-d5f2f082615d</UserSecretsId>
         <Version>0.0.1</Version>
         <Description>贴吧操作库</Description>
+        <PackageLicenseUrl>https://licenses.nuget.org/Unlicense</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/Juicpt/TbClient</RepositoryUrl>
+        <TargetFramework>net8.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>贴吧操作库</Title>
+        <PackageProjectUrl>https://github.com/Juicpt/TbClient</PackageProjectUrl>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
       <DebugType>none</DebugType>
+      <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     </PropertyGroup>
 
     <ItemGroup>

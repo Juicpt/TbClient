@@ -5,10 +5,10 @@ namespace TbClient.Api.GetThreads.Entities;
 
 public class Threads
 {
-    public PageT Page { get; set; }
-    public ForumT Forum { get; set; }
-    public List<Thread> Objs { get; set; }
-    public Dictionary<string, int> TabDictionary { get; set; }
+    public required PageT Page { get; set; }
+    public required ForumT Forum { get; set; }
+    public required List<Thread> Objs { get; set; }
+    public required Dictionary<string, int> TabDictionary { get; set; }
 
     public bool HasMore
     {
@@ -19,7 +19,7 @@ public class Threads
     {
         var forum = ForumT.FromTbData(dataRes);
         var threads = dataRes.ThreadList.Select(p => Thread.FromTbData(p)).ToList();
-        var users= dataRes.UserList.ToDictionary(u=>u.Id,u=>UserInfoT.FromTbData(u));
+        var users = dataRes.UserList.ToDictionary(u => u.Id, u => UserInfoT.FromTbData(u));
         foreach (var thread in threads)
         {
             thread.Fname = forum.Fname;
@@ -39,12 +39,14 @@ public class Threads
     public override string ToString()
     {
         var sb = new StringBuilder();
-        sb.AppendLine($"{nameof(Page)}: {Page}, {nameof(Forum)}: {Forum}, {nameof(TabDictionary)}: {TabDictionary}, {nameof(HasMore)}: {HasMore}");
+        sb.AppendLine(
+            $"{nameof(Page)}: {Page}, {nameof(Forum)}: {Forum}, {nameof(TabDictionary)}: {TabDictionary}, {nameof(HasMore)}: {HasMore}");
         sb.AppendLine($"{nameof(Objs)}:");
         foreach (var obj in Objs)
         {
             sb.AppendLine(obj.ToString());
         }
+
         return sb.ToString();
     }
 }
