@@ -1,0 +1,4 @@
+﻿<Solution>
+  <Project Path="TbClient.Tests\TbClient.Tests.csproj" Type="Classic C#" />
+  <Project Path="TbClient\TbClient.csproj" Type="Classic C#" />
+</Solution>
