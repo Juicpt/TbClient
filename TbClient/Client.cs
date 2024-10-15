@@ -5,17 +5,28 @@ using TbClient.Api.GetThreads;
 using TbClient.Api.GetThreads.Entities;
 using TbClient.core;
 using TbClient.Core;
+using TbClient.Enums;
 
 namespace TbClient;
 
 public class Client
 {
-    public Account? Account { get; set; }
-    public string? Bduss { get; set; }
-    public string? Stoken { get; set; }
-    private HttpCore _httpCore;
+    private Account? Account { get; set; }
+    private string? Bduss { get; set; }
+    private string? Stoken { get; set; }
+    private readonly HttpCore _httpCore;
 
-    private ForumInfoCache _forumInfoCache = new ForumInfoCache();
+    private readonly ForumInfoCache _forumInfoCache = new ForumInfoCache();
+
+    /// <summary>
+    /// 设置贴子获取时排序方法
+    /// </summary>
+    public ThreadSortType ThreadSortType { get; set; } = ThreadSortType.REPLY;
+
+    /// <summary>
+    /// 设置获取贴子时，是否获取精品贴
+    /// </summary>
+    public bool ThreadIsGood { get; set; }
 
     public Client()
     {
@@ -27,11 +38,9 @@ public class Client
         Bduss = bduss;
         Stoken = stoken;
         _httpCore = new HttpCore();
-        if (Bduss != null && Stoken != null)
-        {
-            Account = new Account(Bduss, Stoken);
-            _httpCore.SetAccount(Account);
-        }
+        if (Bduss == null || Stoken == null) return;
+        Account = new Account(Bduss, Stoken);
+        _httpCore.SetAccount(Account);
     }
 
     /// <summary>
@@ -101,11 +110,12 @@ public class Client
     /// <param name="sort"> HOT热门排序</param>
     /// <param name="isGood">True则获取精品区帖子 False则获取普通区帖子. Defaults to False.</param>
     /// <returns></returns>
-    public async Task<Threads> GetThreads(string fname, int pn, int rn, int sort, int isGood)
+    public async Task<Threads> GetThreads(string fname, int pn, int rn, ThreadSortType sort, bool isGood)
     {
         var getThreads = new GetThreads(_httpCore);
-        return await getThreads.RequestAsync(fname, pn, rn, sort, isGood);
+        return await getThreads.RequestAsync(fname, pn, rn, (int)sort, isGood ? 1 : 0);
     }
+
     /// <summary>
     /// 获取首页帖子
     /// </summary>
@@ -115,9 +125,32 @@ public class Client
     /// <param name="sort"> HOT热门排序</param>
     /// <param name="isGood">True则获取精品区帖子 False则获取普通区帖子. Defaults to False.</param>
     /// <returns></returns>
-    public async Task<Threads> GetThreads(ulong fid, int pn, int rn, int sort, int isGood)
+    public async Task<Threads> GetThreads(ulong fid, int pn, int rn, ThreadSortType sort, bool isGood)
     {
         var fname = await GetFname(fid);
         return await GetThreads(fname, pn, rn, sort, isGood);
+    }
+
+    /// <summary>
+    /// 获取首页帖子
+    /// </summary>
+    /// <param name="fid">fid</param>
+    /// <param name="pn">页码. Defaults to 1.</param>
+    /// <returns></returns>
+    public async Task<Threads> GetThreads(ulong fid, int pn)
+    {
+        var fname = await GetFname(fid);
+        return await GetThreads(fname, pn, 30, ThreadSortType, ThreadIsGood);
+    }
+
+    /// <summary>
+    /// 获取首页帖子
+    /// </summary>
+    /// <param name="fname">贴吧名</param>
+    /// <param name="pn">页码. Defaults to 1.</param>
+    /// <returns></returns>
+    public async Task<Threads> GetThreads(string fname, int pn)
+    {
+        return await GetThreads(fname, pn, 30, ThreadSortType, ThreadIsGood);
     }
 }

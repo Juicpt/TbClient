@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <Authors>Juicpt</Authors>
         <UserSecretsId>8bd67551-0cb1-4639-b33c-d5f2f082615d</UserSecretsId>
-        <Version>0.0.1</Version>
+        <Version>0.0.2</Version>
         <Description>贴吧操作库</Description>
         <PackageLicenseUrl>https://licenses.nuget.org/Unlicense</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/Juicpt/TbClient</RepositoryUrl>
