@@ -1,12 +1,13 @@
 ﻿using System.IO.Hashing;
 using System.Security.Cryptography;
 using System.Text;
-using TbClient.core;
-// 导入所需哈希类
-// 导入加密类
 
 namespace TbClient.Core;
 
+/// <summary>
+/// 导入所需哈希类
+/// 导入加密类
+/// </summary>
 public static class TbCrypto
 {
     private const int HasherNum = 4;
@@ -141,8 +142,8 @@ public static class TbCrypto
     // 生成 CUID 3 AID 并返回结果
     private static string? TbcC3Aid(ReadOnlySpan<byte> androidId, ReadOnlySpan<byte> uuid)
     {
-         var sha1InputLength = Cuid3Prefix.Length + Const.TbcAndroidIdSize + uuid.Length;
-         var dstOffset = 5 + Const.TbcSha1Base32Size;
+        var sha1InputLength = Cuid3Prefix.Length + Const.TbcAndroidIdSize + uuid.Length;
+        var dstOffset = 5 + Const.TbcSha1Base32Size;
 
         // 使用 stackalloc 在栈上分配内存，避免堆分配
         Span<byte> sha1Buffer = stackalloc byte[sha1InputLength];
@@ -169,7 +170,7 @@ public static class TbCrypto
 
         // 使用Base32编码
         sb.Append(Base32Encode(heliosHash));
-    
+
         return sb.ToString();
     }
 

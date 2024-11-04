@@ -1,5 +1,5 @@
 ﻿using System.Net;
 
-namespace TbClient.core;
+namespace TbClient.Core;
 
 public record NetCore(string ProxyUrl, NetworkCredential ProxyCredential);

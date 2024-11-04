@@ -14,7 +14,6 @@ using TbClient.Api.Login;
 using TbClient.Api.Login.Entities;
 using TbClient.Api.Profile.GetUInfoProfile;
 using TbClient.Api.Profile.GetUInfoProfile.Entities;
-using TbClient.core;
 using TbClient.Core;
 using TbClient.Entities;
 using TbClient.Enums;
@@ -199,10 +198,10 @@ public class Client
         return await getUInfoPanel.RequestAsync(userId);
     }
 
-    public async Task<string> GetUserInfo(string userId, ReqUInfo require)
-    {
-        return "";
-    }
+    // public async Task<string> GetUserInfo(string userId, ReqUInfo require)
+    // {
+    //     return "";
+    // }
 
     /// <summary>
     ///  获取用户信息

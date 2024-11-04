@@ -2,7 +2,7 @@
 using JetBrains.Annotations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TbClient.Api.Profile.GetUInfoProfile;
-using TbClient.core;
+using TbClient.Core;
 
 namespace TbClient.Tests.Api.Profile.GetUInfoProfile;
 

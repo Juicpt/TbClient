@@ -1,6 +1,6 @@
 ﻿using Google.Protobuf;
 using TbClient.Api.Profile.GetUInfoProfile.Entities;
-using TbClient.core;
+using TbClient.Core;
 using TbClient.Exceptions;
 
 namespace TbClient.Api.Profile.GetUInfoProfile;

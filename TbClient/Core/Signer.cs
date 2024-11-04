@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace TbClient.core;
+namespace TbClient.Core;
 
 public class Signer
 {

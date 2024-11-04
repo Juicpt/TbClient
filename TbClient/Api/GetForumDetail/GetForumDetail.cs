@@ -1,7 +1,6 @@
 ﻿using Google.Protobuf;
 using TbClient.Api.GetForumDetail.Entities;
-using TbClient.Api.GetThreads.Entities;
-using TbClient.core;
+using TbClient.Core;
 using TbClient.Exceptions;
 
 namespace TbClient.Api.GetForumDetail;

@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
-using TbClient.core;
+using TbClient.Core;
 using TbClient.Entities;
 using TbClient.Enums;
 

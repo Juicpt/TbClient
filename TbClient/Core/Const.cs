@@ -1,4 +1,4 @@
-﻿namespace TbClient.core;
+﻿namespace TbClient.Core;
 
 public static class Const
 {

@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using TbClient.core;
+﻿using TbClient.Core;
 
 namespace TbClient.Api.DelBawu;
 

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using TbClient.Api.GetForum.Entities;
-using TbClient.core;
+using TbClient.Core;
 using TbClient.Exceptions;
 
 namespace TbClient.Api.GetForum;

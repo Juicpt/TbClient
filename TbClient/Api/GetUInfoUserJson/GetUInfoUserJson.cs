@@ -1,8 +1,7 @@
 ﻿using System.Text;
 using Newtonsoft.Json.Linq;
 using TbClient.Api.GetUInfoUserJson.Entities;
-using TbClient.core;
-using TbClient.Entities;
+using TbClient.Core;
 using TbClient.Exceptions;
 
 namespace TbClient.Api.GetUInfoUserJson;

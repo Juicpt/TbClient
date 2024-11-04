@@ -1,8 +1,6 @@
 ﻿using System;
 using JetBrains.Annotations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TbClient.Api.Sync;
-using TbClient.core;
 using TbClient.Core;
 
 namespace TbClient.Tests.Api.Sync;

@@ -1,7 +1,6 @@
-﻿using System.Text;
-using Google.Protobuf;
+﻿using Google.Protobuf;
 using TbClient.Api.GetUInfoGetUserInfoApp.Entities;
-using TbClient.core;
+using TbClient.Core;
 using TbClient.Exceptions;
 
 namespace TbClient.Api.GetUInfoGetUserInfoApp;

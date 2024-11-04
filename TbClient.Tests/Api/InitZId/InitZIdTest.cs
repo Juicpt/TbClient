@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using System.Text;
 using JetBrains.Annotations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TbClient.core;
 using TbClient.Core;
 
 namespace TbClient.Tests.Api.InitZId;

@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using Newtonsoft.Json.Linq;
-using TbClient.core;
 using TbClient.Core;
 
 namespace TbClient.Api.InitZId;

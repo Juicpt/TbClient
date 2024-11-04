@@ -1,8 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TbClient.Api.GetUInfoGetUserInfoApp;
-using TbClient.core;
+using TbClient.Core;
 
 namespace TbClient.Tests.Api.GetUInfoGetUserInfoApp;
 

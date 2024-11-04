@@ -1,9 +1,8 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
-using TbClient.Core;
 
-namespace TbClient.core;
+namespace TbClient.Core;
 
 public class HttpCore
 {
