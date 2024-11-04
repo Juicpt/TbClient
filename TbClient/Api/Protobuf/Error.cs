@@ -22,12 +22,12 @@ public static partial class ErrorReflection {
   static ErrorReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgtFcnJvci5wcm90byIoCgVFcnJvchIPCgdlcnJvcm5vGAEgASgFEg4KBmVy",
-          "cm1zZxgCIAEoCWIGcHJvdG8z"));
+          "CgtFcnJvci5wcm90byI5CgVFcnJvchIPCgdlcnJvcm5vGAEgASgFEg4KBmVy",
+          "cm1zZxgCIAEoCRIPCgd1c2VybXNnGAMgASgJYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::Error), global::Error.Parser, new[]{ "Errorno", "Errmsg" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::Error), global::Error.Parser, new[]{ "Errorno", "Errmsg", "Usermsg" }, null, null, null, null)
         }));
   }
   #endregion
@@ -72,6 +72,7 @@ public sealed partial class Error : pb::IMessage<Error>
   public Error(Error other) : this() {
     errorno_ = other.errorno_;
     errmsg_ = other.errmsg_;
+    usermsg_ = other.usermsg_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -105,6 +106,18 @@ public sealed partial class Error : pb::IMessage<Error>
     }
   }
 
+  /// <summary>Field number for the "usermsg" field.</summary>
+  public const int UsermsgFieldNumber = 3;
+  private string usermsg_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Usermsg {
+    get { return usermsg_; }
+    set {
+      usermsg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override bool Equals(object other) {
@@ -122,6 +135,7 @@ public sealed partial class Error : pb::IMessage<Error>
     }
     if (Errorno != other.Errorno) return false;
     if (Errmsg != other.Errmsg) return false;
+    if (Usermsg != other.Usermsg) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -131,6 +145,7 @@ public sealed partial class Error : pb::IMessage<Error>
     int hash = 1;
     if (Errorno != 0) hash ^= Errorno.GetHashCode();
     if (Errmsg.Length != 0) hash ^= Errmsg.GetHashCode();
+    if (Usermsg.Length != 0) hash ^= Usermsg.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -157,6 +172,10 @@ public sealed partial class Error : pb::IMessage<Error>
       output.WriteRawTag(18);
       output.WriteString(Errmsg);
     }
+    if (Usermsg.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Usermsg);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -175,6 +194,10 @@ public sealed partial class Error : pb::IMessage<Error>
       output.WriteRawTag(18);
       output.WriteString(Errmsg);
     }
+    if (Usermsg.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Usermsg);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
     }
@@ -190,6 +213,9 @@ public sealed partial class Error : pb::IMessage<Error>
     }
     if (Errmsg.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(Errmsg);
+    }
+    if (Usermsg.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Usermsg);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -208,6 +234,9 @@ public sealed partial class Error : pb::IMessage<Error>
     }
     if (other.Errmsg.Length != 0) {
       Errmsg = other.Errmsg;
+    }
+    if (other.Usermsg.Length != 0) {
+      Usermsg = other.Usermsg;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -236,6 +265,10 @@ public sealed partial class Error : pb::IMessage<Error>
           Errmsg = input.ReadString();
           break;
         }
+        case 26: {
+          Usermsg = input.ReadString();
+          break;
+        }
       }
     }
   #endif
@@ -261,6 +294,10 @@ public sealed partial class Error : pb::IMessage<Error>
         }
         case 18: {
           Errmsg = input.ReadString();
+          break;
+        }
+        case 26: {
+          Usermsg = input.ReadString();
           break;
         }
       }

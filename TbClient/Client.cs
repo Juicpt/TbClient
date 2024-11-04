@@ -1,10 +1,22 @@
-﻿using TbClient.Api.GetFid;
+﻿using TbClient.Api.Block;
+using TbClient.Api.GetFid;
 using TbClient.Api.GetForumDetail;
 using TbClient.Api.GetForumDetail.Entities;
 using TbClient.Api.GetThreads;
 using TbClient.Api.GetThreads.Entities;
+using TbClient.Api.GetUInfoGetUserInfoApp;
+using TbClient.Api.GetUInfoGetUserInfoApp.Entities;
+using TbClient.Api.GetUInfoPanel;
+using TbClient.Api.GetUInfoPanel.Entities;
+using TbClient.Api.GetUInfoUserJson;
+using TbClient.Api.GetUInfoUserJson.Entities;
+using TbClient.Api.Login;
+using TbClient.Api.Login.Entities;
+using TbClient.Api.Profile.GetUInfoProfile;
+using TbClient.Api.Profile.GetUInfoProfile.Entities;
 using TbClient.core;
 using TbClient.Core;
+using TbClient.Entities;
 using TbClient.Enums;
 
 namespace TbClient;
@@ -13,6 +25,7 @@ public class Client
 {
     private Account? Account { get; set; }
     private string? Bduss { get; set; }
+    private UserInfoLogin? User { get; set; }
     private string? Stoken { get; set; }
     private readonly HttpCore _httpCore;
 
@@ -27,6 +40,11 @@ public class Client
     /// 设置获取贴子时，是否获取精品贴
     /// </summary>
     public bool ThreadIsGood { get; set; }
+
+    /// <summary>
+    /// 设置获取贴子时，默认获取数量
+    /// </summary>
+    public int ThreadRn { get; set; } = 30;
 
     public Client()
     {
@@ -151,6 +169,191 @@ public class Client
     /// <returns></returns>
     public async Task<Threads> GetThreads(string fname, int pn)
     {
-        return await GetThreads(fname, pn, 30, ThreadSortType, ThreadIsGood);
+        return await GetThreads(fname, pn, ThreadRn, ThreadSortType, ThreadIsGood);
+    }
+
+    private async Task<UserInfoGuInfoApp> _GetUInfoGetUserInfoApp(int userId)
+    {
+        var getUInfoGetUserInfoApp = new GetUInfoGetUserInfoApp(_httpCore);
+        var user = await getUInfoGetUserInfoApp.RequestAsync(userId);
+        return user;
+    }
+
+    private async Task<UserInfoPf> _GetUInfoProfile<T>(T userId)
+    {
+        var getUInfoProfile = new GetUInfoProfile<T>(_httpCore);
+        return await getUInfoProfile.RequestAsync(userId);
+    }
+
+    private async Task<UserInfoJson> _GetUInfoUserJson(string userName)
+    {
+        var getUInfoUserJson = new GetUInfoUserJson(_httpCore);
+
+        return await getUInfoUserJson.RequestAsync(userName);
+    }
+
+    private async Task<UserInfoPanel> _GetUInfoPanel(string userId)
+    {
+        var getUInfoPanel = new GetUInfoPanel(_httpCore);
+
+        return await getUInfoPanel.RequestAsync(userId);
+    }
+
+    public async Task<string> GetUserInfo(string userId, ReqUInfo require)
+    {
+        return "";
+    }
+
+    /// <summary>
+    ///  获取用户信息
+    /// </summary>
+    /// <param name="userId">用户id user_id</param>
+    /// <param name="require">请求数据类型</param>
+    /// <returns>UserInfoGuInfoApp</returns>
+    public async Task<UserInfoGuInfoApp> GetUserInfo(int userId, ReqUInfo require)
+    {
+        if ((require & ReqUInfo.Basic) == require)
+        {
+            return await _GetUInfoGetUserInfoApp(userId);
+        }
+
+        return await _GetUInfoProfile(userId);
+    }
+
+    /// <summary>
+    ///  获取用户信息
+    /// </summary>
+    /// <param name="userId">用户id user_id</param>
+    /// <returns>UserInfoGuInfoApp</returns>
+    public async Task<UserInfoPf> GetUserInfo(int userId)
+    {
+        return await _GetUInfoProfile(userId);
+    }
+
+    /// <summary>
+    /// 获取用户信息
+    /// </summary>
+    /// <param name="userNameOrPortrait">用户名 or portrait</param>
+    /// <returns></returns>
+    public async Task<UserInfoPf> GetUserInfo(string userNameOrPortrait)
+    {
+        if (Utils.IsPortrait(userNameOrPortrait))
+        {
+            return await _GetUInfoProfile(userNameOrPortrait);
+        }
+
+        var user = await _GetUInfoUserJson(userNameOrPortrait);
+        return await _GetUInfoProfile(user.Portrait);
+    }
+
+    private async Task<BaseUser> _GetUserInfoByPortrait(string portrait, ReqUInfo require)
+    {
+        if ((require & ReqUInfo.All) == ReqUInfo.All)
+        {
+            return await _GetUInfoProfile(portrait);
+        }
+
+        if ((require & ReqUInfo.UserId) == ReqUInfo.UserId)
+        {
+            return await _GetUInfoPanel(portrait);
+        }
+
+        return new UserInfoGuInfoApp();
+    }
+
+    /// <summary>
+    /// 封禁用户
+    /// </summary>
+    /// <param name="fid">所在贴吧的fid</param>
+    /// <param name="userId">用户id user_name / portrait 优先portrait</param>
+    /// <param name="day">封禁天数. Defaults to 1.</param>
+    /// <param name="reason">封禁理由. Defaults to ''.</param>
+    /// <returns></returns>
+    public async Task<bool> Block(ulong fid, string userId, int day = 1, string reason = "")
+    {
+        var portrait = userId;
+        var isPortrait = Utils.IsPortrait(portrait);
+        if (!isPortrait)
+        {
+            var user = await GetUserInfo(userId);
+            portrait = user.Portrait;
+        }
+
+        await _initTbs();
+        var block = new Block(_httpCore);
+        return await block.RequestAsync(fid, portrait, day, reason);
+    }
+    /// <summary>
+    /// 封禁用户
+    /// </summary>
+    /// <param name="fid">所在贴吧的fid</param>
+    /// <param name="userId">用户id user_id</param>
+    /// <param name="day">封禁天数. Defaults to 1.</param>
+    /// <param name="reason">封禁理由. Defaults to ''.</param>
+    /// <returns></returns>
+    public async Task<bool> Block(ulong fid, int userId, int day = 1, string reason = "")
+    {
+        var user = await GetUserInfo(userId);
+        await _initTbs();
+        var block = new Block(_httpCore);
+        return await block.RequestAsync(fid, user.Portrait, day, reason);
+    }
+    
+    /// <summary>
+    /// 封禁用户
+    /// </summary>
+    /// <param name="fname">所在贴吧的贴吧名</param>
+    /// <param name="userId">用户id user_id</param>
+    /// <param name="day">封禁天数. Defaults to 1.</param>
+    /// <param name="reason">封禁理由. Defaults to ''.</param>
+    /// <returns></returns>
+    public async Task<bool> Block(string fname, int userId, int day = 1, string reason = "")
+    {
+        var fid = await GetFid(fname);
+        var user = await GetUserInfo(userId);
+        await _initTbs();
+        var block = new Block(_httpCore);
+        return await block.RequestAsync(fid, user.Portrait, day, reason);
+    }
+    
+    /// <summary>
+    /// 封禁用户
+    /// </summary>
+    /// <param name="fname">所在贴吧的贴吧名</param>
+    /// <param name="userId">用户id user_name / portrait</param>
+    /// <param name="day">封禁天数. Defaults to 1.</param>
+    /// <param name="reason">封禁理由. Defaults to ''.</param>
+    /// <returns></returns>
+    public async Task<bool> Block(string fname, string userId, int day = 1, string reason = "")
+    {
+        var fid = await GetFid(fname);
+        var portrait = userId;
+        var isPortrait = Utils.IsPortrait(portrait);
+        if (!isPortrait)
+        {
+            var user = await GetUserInfo(userId);
+            portrait = user.Portrait;
+        }
+        await _initTbs();
+        var block = new Block(_httpCore);
+        return await block.RequestAsync(fid, portrait, day, reason);
+    }
+
+    private async Task _initTbs()
+    {
+        if (Account is { Tbs: not null })
+        {
+            return;
+        }
+
+        await _login();
+    }
+
+    private async Task _login()
+    {
+        var login = new Login(_httpCore);
+        var (userInfoLogin, tbs) = await login.RequestAsync();
+        User = userInfoLogin;
+        Account!.Tbs = tbs;
     }
 }

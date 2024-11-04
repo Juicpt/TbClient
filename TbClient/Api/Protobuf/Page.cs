@@ -22,14 +22,17 @@ public static partial class PageReflection {
   static PageReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgpQYWdlLnByb3RvInwKBFBhZ2USEQoJcGFnZV9zaXplGAEgASgFEhQKDGN1",
-          "cnJlbnRfcGFnZRgDIAEoBRITCgt0b3RhbF9jb3VudBgEIAEoBRISCgp0b3Rh",
-          "bF9wYWdlGAUgASgFEhAKCGhhc19tb3JlGAYgASgFEhAKCGhhc19wcmV2GAcg",
-          "ASgFYgZwcm90bzM="));
+          "CgpQYWdlLnByb3RvIpECCgRQYWdlEhEKCXBhZ2Vfc2l6ZRgBIAEoBRIOCgZv",
+          "ZmZzZXQYAiABKAUSFAoMY3VycmVudF9wYWdlGAMgASgFEhMKC3RvdGFsX2Nv",
+          "dW50GAQgASgFEhIKCnRvdGFsX3BhZ2UYBSABKAUSEAoIaGFzX21vcmUYBiAB",
+          "KAUSEAoIaGFzX3ByZXYYByABKAUSEwoLY3VyX2dvb2RfaWQYCCABKAUSDwoH",
+          "cmVxX251bRgJIAEoBRIMCgRwbnVtGAogASgFEgwKBHRudW0YCyABKAUSEQoJ",
+          "dG90YWxfbnVtGAwgASgFEhYKDmx6X3RvdGFsX2Zsb29yGA0gASgFEhYKDm5l",
+          "d190b3RhbF9wYWdlGA4gASgFYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::Page), global::Page.Parser, new[]{ "PageSize", "CurrentPage", "TotalCount", "TotalPage", "HasMore", "HasPrev" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::Page), global::Page.Parser, new[]{ "PageSize", "Offset", "CurrentPage", "TotalCount", "TotalPage", "HasMore", "HasPrev", "CurGoodId", "ReqNum", "Pnum", "Tnum", "TotalNum", "LzTotalFloor", "NewTotalPage" }, null, null, null, null)
         }));
   }
   #endregion
@@ -73,11 +76,19 @@ public sealed partial class Page : pb::IMessage<Page>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public Page(Page other) : this() {
     pageSize_ = other.pageSize_;
+    offset_ = other.offset_;
     currentPage_ = other.currentPage_;
     totalCount_ = other.totalCount_;
     totalPage_ = other.totalPage_;
     hasMore_ = other.hasMore_;
     hasPrev_ = other.hasPrev_;
+    curGoodId_ = other.curGoodId_;
+    reqNum_ = other.reqNum_;
+    pnum_ = other.pnum_;
+    tnum_ = other.tnum_;
+    totalNum_ = other.totalNum_;
+    lzTotalFloor_ = other.lzTotalFloor_;
+    newTotalPage_ = other.newTotalPage_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -96,6 +107,18 @@ public sealed partial class Page : pb::IMessage<Page>
     get { return pageSize_; }
     set {
       pageSize_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "offset" field.</summary>
+  public const int OffsetFieldNumber = 2;
+  private int offset_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int Offset {
+    get { return offset_; }
+    set {
+      offset_ = value;
     }
   }
 
@@ -159,6 +182,90 @@ public sealed partial class Page : pb::IMessage<Page>
     }
   }
 
+  /// <summary>Field number for the "cur_good_id" field.</summary>
+  public const int CurGoodIdFieldNumber = 8;
+  private int curGoodId_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int CurGoodId {
+    get { return curGoodId_; }
+    set {
+      curGoodId_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "req_num" field.</summary>
+  public const int ReqNumFieldNumber = 9;
+  private int reqNum_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int ReqNum {
+    get { return reqNum_; }
+    set {
+      reqNum_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "pnum" field.</summary>
+  public const int PnumFieldNumber = 10;
+  private int pnum_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int Pnum {
+    get { return pnum_; }
+    set {
+      pnum_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "tnum" field.</summary>
+  public const int TnumFieldNumber = 11;
+  private int tnum_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int Tnum {
+    get { return tnum_; }
+    set {
+      tnum_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "total_num" field.</summary>
+  public const int TotalNumFieldNumber = 12;
+  private int totalNum_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int TotalNum {
+    get { return totalNum_; }
+    set {
+      totalNum_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "lz_total_floor" field.</summary>
+  public const int LzTotalFloorFieldNumber = 13;
+  private int lzTotalFloor_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int LzTotalFloor {
+    get { return lzTotalFloor_; }
+    set {
+      lzTotalFloor_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "new_total_page" field.</summary>
+  public const int NewTotalPageFieldNumber = 14;
+  private int newTotalPage_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int NewTotalPage {
+    get { return newTotalPage_; }
+    set {
+      newTotalPage_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override bool Equals(object other) {
@@ -175,11 +282,19 @@ public sealed partial class Page : pb::IMessage<Page>
       return true;
     }
     if (PageSize != other.PageSize) return false;
+    if (Offset != other.Offset) return false;
     if (CurrentPage != other.CurrentPage) return false;
     if (TotalCount != other.TotalCount) return false;
     if (TotalPage != other.TotalPage) return false;
     if (HasMore != other.HasMore) return false;
     if (HasPrev != other.HasPrev) return false;
+    if (CurGoodId != other.CurGoodId) return false;
+    if (ReqNum != other.ReqNum) return false;
+    if (Pnum != other.Pnum) return false;
+    if (Tnum != other.Tnum) return false;
+    if (TotalNum != other.TotalNum) return false;
+    if (LzTotalFloor != other.LzTotalFloor) return false;
+    if (NewTotalPage != other.NewTotalPage) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -188,11 +303,19 @@ public sealed partial class Page : pb::IMessage<Page>
   public override int GetHashCode() {
     int hash = 1;
     if (PageSize != 0) hash ^= PageSize.GetHashCode();
+    if (Offset != 0) hash ^= Offset.GetHashCode();
     if (CurrentPage != 0) hash ^= CurrentPage.GetHashCode();
     if (TotalCount != 0) hash ^= TotalCount.GetHashCode();
     if (TotalPage != 0) hash ^= TotalPage.GetHashCode();
     if (HasMore != 0) hash ^= HasMore.GetHashCode();
     if (HasPrev != 0) hash ^= HasPrev.GetHashCode();
+    if (CurGoodId != 0) hash ^= CurGoodId.GetHashCode();
+    if (ReqNum != 0) hash ^= ReqNum.GetHashCode();
+    if (Pnum != 0) hash ^= Pnum.GetHashCode();
+    if (Tnum != 0) hash ^= Tnum.GetHashCode();
+    if (TotalNum != 0) hash ^= TotalNum.GetHashCode();
+    if (LzTotalFloor != 0) hash ^= LzTotalFloor.GetHashCode();
+    if (NewTotalPage != 0) hash ^= NewTotalPage.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -215,6 +338,10 @@ public sealed partial class Page : pb::IMessage<Page>
       output.WriteRawTag(8);
       output.WriteInt32(PageSize);
     }
+    if (Offset != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Offset);
+    }
     if (CurrentPage != 0) {
       output.WriteRawTag(24);
       output.WriteInt32(CurrentPage);
@@ -234,6 +361,34 @@ public sealed partial class Page : pb::IMessage<Page>
     if (HasPrev != 0) {
       output.WriteRawTag(56);
       output.WriteInt32(HasPrev);
+    }
+    if (CurGoodId != 0) {
+      output.WriteRawTag(64);
+      output.WriteInt32(CurGoodId);
+    }
+    if (ReqNum != 0) {
+      output.WriteRawTag(72);
+      output.WriteInt32(ReqNum);
+    }
+    if (Pnum != 0) {
+      output.WriteRawTag(80);
+      output.WriteInt32(Pnum);
+    }
+    if (Tnum != 0) {
+      output.WriteRawTag(88);
+      output.WriteInt32(Tnum);
+    }
+    if (TotalNum != 0) {
+      output.WriteRawTag(96);
+      output.WriteInt32(TotalNum);
+    }
+    if (LzTotalFloor != 0) {
+      output.WriteRawTag(104);
+      output.WriteInt32(LzTotalFloor);
+    }
+    if (NewTotalPage != 0) {
+      output.WriteRawTag(112);
+      output.WriteInt32(NewTotalPage);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -249,6 +404,10 @@ public sealed partial class Page : pb::IMessage<Page>
       output.WriteRawTag(8);
       output.WriteInt32(PageSize);
     }
+    if (Offset != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Offset);
+    }
     if (CurrentPage != 0) {
       output.WriteRawTag(24);
       output.WriteInt32(CurrentPage);
@@ -269,6 +428,34 @@ public sealed partial class Page : pb::IMessage<Page>
       output.WriteRawTag(56);
       output.WriteInt32(HasPrev);
     }
+    if (CurGoodId != 0) {
+      output.WriteRawTag(64);
+      output.WriteInt32(CurGoodId);
+    }
+    if (ReqNum != 0) {
+      output.WriteRawTag(72);
+      output.WriteInt32(ReqNum);
+    }
+    if (Pnum != 0) {
+      output.WriteRawTag(80);
+      output.WriteInt32(Pnum);
+    }
+    if (Tnum != 0) {
+      output.WriteRawTag(88);
+      output.WriteInt32(Tnum);
+    }
+    if (TotalNum != 0) {
+      output.WriteRawTag(96);
+      output.WriteInt32(TotalNum);
+    }
+    if (LzTotalFloor != 0) {
+      output.WriteRawTag(104);
+      output.WriteInt32(LzTotalFloor);
+    }
+    if (NewTotalPage != 0) {
+      output.WriteRawTag(112);
+      output.WriteInt32(NewTotalPage);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
     }
@@ -281,6 +468,9 @@ public sealed partial class Page : pb::IMessage<Page>
     int size = 0;
     if (PageSize != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(PageSize);
+    }
+    if (Offset != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Offset);
     }
     if (CurrentPage != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurrentPage);
@@ -297,6 +487,27 @@ public sealed partial class Page : pb::IMessage<Page>
     if (HasPrev != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(HasPrev);
     }
+    if (CurGoodId != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(CurGoodId);
+    }
+    if (ReqNum != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ReqNum);
+    }
+    if (Pnum != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Pnum);
+    }
+    if (Tnum != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Tnum);
+    }
+    if (TotalNum != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(TotalNum);
+    }
+    if (LzTotalFloor != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(LzTotalFloor);
+    }
+    if (NewTotalPage != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(NewTotalPage);
+    }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -312,6 +523,9 @@ public sealed partial class Page : pb::IMessage<Page>
     if (other.PageSize != 0) {
       PageSize = other.PageSize;
     }
+    if (other.Offset != 0) {
+      Offset = other.Offset;
+    }
     if (other.CurrentPage != 0) {
       CurrentPage = other.CurrentPage;
     }
@@ -326,6 +540,27 @@ public sealed partial class Page : pb::IMessage<Page>
     }
     if (other.HasPrev != 0) {
       HasPrev = other.HasPrev;
+    }
+    if (other.CurGoodId != 0) {
+      CurGoodId = other.CurGoodId;
+    }
+    if (other.ReqNum != 0) {
+      ReqNum = other.ReqNum;
+    }
+    if (other.Pnum != 0) {
+      Pnum = other.Pnum;
+    }
+    if (other.Tnum != 0) {
+      Tnum = other.Tnum;
+    }
+    if (other.TotalNum != 0) {
+      TotalNum = other.TotalNum;
+    }
+    if (other.LzTotalFloor != 0) {
+      LzTotalFloor = other.LzTotalFloor;
+    }
+    if (other.NewTotalPage != 0) {
+      NewTotalPage = other.NewTotalPage;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -350,6 +585,10 @@ public sealed partial class Page : pb::IMessage<Page>
           PageSize = input.ReadInt32();
           break;
         }
+        case 16: {
+          Offset = input.ReadInt32();
+          break;
+        }
         case 24: {
           CurrentPage = input.ReadInt32();
           break;
@@ -368,6 +607,34 @@ public sealed partial class Page : pb::IMessage<Page>
         }
         case 56: {
           HasPrev = input.ReadInt32();
+          break;
+        }
+        case 64: {
+          CurGoodId = input.ReadInt32();
+          break;
+        }
+        case 72: {
+          ReqNum = input.ReadInt32();
+          break;
+        }
+        case 80: {
+          Pnum = input.ReadInt32();
+          break;
+        }
+        case 88: {
+          Tnum = input.ReadInt32();
+          break;
+        }
+        case 96: {
+          TotalNum = input.ReadInt32();
+          break;
+        }
+        case 104: {
+          LzTotalFloor = input.ReadInt32();
+          break;
+        }
+        case 112: {
+          NewTotalPage = input.ReadInt32();
           break;
         }
       }
@@ -393,6 +660,10 @@ public sealed partial class Page : pb::IMessage<Page>
           PageSize = input.ReadInt32();
           break;
         }
+        case 16: {
+          Offset = input.ReadInt32();
+          break;
+        }
         case 24: {
           CurrentPage = input.ReadInt32();
           break;
@@ -411,6 +682,34 @@ public sealed partial class Page : pb::IMessage<Page>
         }
         case 56: {
           HasPrev = input.ReadInt32();
+          break;
+        }
+        case 64: {
+          CurGoodId = input.ReadInt32();
+          break;
+        }
+        case 72: {
+          ReqNum = input.ReadInt32();
+          break;
+        }
+        case 80: {
+          Pnum = input.ReadInt32();
+          break;
+        }
+        case 88: {
+          Tnum = input.ReadInt32();
+          break;
+        }
+        case 96: {
+          TotalNum = input.ReadInt32();
+          break;
+        }
+        case 104: {
+          LzTotalFloor = input.ReadInt32();
+          break;
+        }
+        case 112: {
+          NewTotalPage = input.ReadInt32();
           break;
         }
       }

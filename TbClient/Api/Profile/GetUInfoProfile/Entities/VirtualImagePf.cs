@@ -1,4 +1,4 @@
-﻿namespace TbClient.Api.Profile.GetUInfoProfile;
+﻿namespace TbClient.Api.Profile.GetUInfoProfile.Entities;
 
 public class VirtualImagePf
 {

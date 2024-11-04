@@ -22,10 +22,11 @@ public class GetThreads(HttpCore httpCore)
                 },
                 Kw = fname,
                 Pn = pn,
-                Rn = 105,
-                RnNeed = rn > 0 ? rn : 1,
+                Rn = rn,
+                RnNeed = 10,
                 IsGood = isGood,
-                SortType = sort
+                SortType = sort,
+                LoadType = 1,
             }
         };
         return frsPageResIdl.ToByteArray();
@@ -41,7 +42,7 @@ public class GetThreads(HttpCore httpCore)
         }
 
         var dataForum = resProto.Data;
-       
+
         return Threads.FromTbData(dataForum);
     }
 

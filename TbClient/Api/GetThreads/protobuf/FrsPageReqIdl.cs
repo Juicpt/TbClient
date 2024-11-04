@@ -22,16 +22,16 @@ public static partial class FrsPageReqIdlReflection {
   static FrsPageReqIdlReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChNGcnNQYWdlUmVxSWRsLnByb3RvGg9Db21tb25SZXEucHJvdG8iwwEKDUZy",
+          "ChNGcnNQYWdlUmVxSWRsLnByb3RvGg9Db21tb25SZXEucHJvdG8i1gEKDUZy",
           "c1BhZ2VSZXFJZGwSJAoEZGF0YRgBIAEoCzIWLkZyc1BhZ2VSZXFJZGwuRGF0",
-          "YVJlcRqLAQoHRGF0YVJlcRIaCgZjb21tb24YJyABKAsyCi5Db21tb25SZXES",
+          "YVJlcRqeAQoHRGF0YVJlcRIaCgZjb21tb24YJyABKAsyCi5Db21tb25SZXES",
           "CgoCa3cYASABKAkSCgoCcm4YAiABKAUSDwoHcm5fbmVlZBgDIAEoBRIPCgdp",
           "c19nb29kGAQgASgFEgsKA2NpZBgFIAEoBRIKCgJwbhgPIAEoBRIRCglzb3J0",
-          "X3R5cGUYLyABKAViBnByb3RvMw=="));
+          "X3R5cGUYLyABKAUSEQoJbG9hZF90eXBlGDEgASgFYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::CommonReqReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageReqIdl), global::FrsPageReqIdl.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageReqIdl.Types.DataReq), global::FrsPageReqIdl.Types.DataReq.Parser, new[]{ "Common", "Kw", "Rn", "RnNeed", "IsGood", "Cid", "Pn", "SortType" }, null, null, null, null)})
+          new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageReqIdl), global::FrsPageReqIdl.Parser, new[]{ "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageReqIdl.Types.DataReq), global::FrsPageReqIdl.Types.DataReq.Parser, new[]{ "Common", "Kw", "Rn", "RnNeed", "IsGood", "Cid", "Pn", "SortType", "LoadType" }, null, null, null, null)})
         }));
   }
   #endregion
@@ -293,6 +293,7 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
         cid_ = other.cid_;
         pn_ = other.pn_;
         sortType_ = other.sortType_;
+        loadType_ = other.loadType_;
         _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
       }
 
@@ -398,6 +399,18 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
         }
       }
 
+      /// <summary>Field number for the "load_type" field.</summary>
+      public const int LoadTypeFieldNumber = 49;
+      private int loadType_;
+      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+      public int LoadType {
+        get { return loadType_; }
+        set {
+          loadType_ = value;
+        }
+      }
+
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override bool Equals(object other) {
@@ -421,6 +434,7 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
         if (Cid != other.Cid) return false;
         if (Pn != other.Pn) return false;
         if (SortType != other.SortType) return false;
+        if (LoadType != other.LoadType) return false;
         return Equals(_unknownFields, other._unknownFields);
       }
 
@@ -436,6 +450,7 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
         if (Cid != 0) hash ^= Cid.GetHashCode();
         if (Pn != 0) hash ^= Pn.GetHashCode();
         if (SortType != 0) hash ^= SortType.GetHashCode();
+        if (LoadType != 0) hash ^= LoadType.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
         }
@@ -486,6 +501,10 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
           output.WriteRawTag(248, 2);
           output.WriteInt32(SortType);
         }
+        if (LoadType != 0) {
+          output.WriteRawTag(136, 3);
+          output.WriteInt32(LoadType);
+        }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(output);
         }
@@ -528,6 +547,10 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
           output.WriteRawTag(248, 2);
           output.WriteInt32(SortType);
         }
+        if (LoadType != 0) {
+          output.WriteRawTag(136, 3);
+          output.WriteInt32(LoadType);
+        }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(ref output);
         }
@@ -561,6 +584,9 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
         }
         if (SortType != 0) {
           size += 2 + pb::CodedOutputStream.ComputeInt32Size(SortType);
+        }
+        if (LoadType != 0) {
+          size += 2 + pb::CodedOutputStream.ComputeInt32Size(LoadType);
         }
         if (_unknownFields != null) {
           size += _unknownFields.CalculateSize();
@@ -600,6 +626,9 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
         }
         if (other.SortType != 0) {
           SortType = other.SortType;
+        }
+        if (other.LoadType != 0) {
+          LoadType = other.LoadType;
         }
         _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
       }
@@ -655,6 +684,10 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
               SortType = input.ReadInt32();
               break;
             }
+            case 392: {
+              LoadType = input.ReadInt32();
+              break;
+            }
           }
         }
       #endif
@@ -707,6 +740,10 @@ public sealed partial class FrsPageReqIdl : pb::IMessage<FrsPageReqIdl>
             }
             case 376: {
               SortType = input.ReadInt32();
+              break;
+            }
+            case 392: {
+              LoadType = input.ReadInt32();
               break;
             }
           }

@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json.Linq;
-using TbClient.Api.GetForum;
 using TbClient.core;
 using TbClient.Exceptions;
 

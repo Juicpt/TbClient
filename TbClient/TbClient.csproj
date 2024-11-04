@@ -5,7 +5,7 @@
         <Nullable>enable</Nullable>
         <Authors>Juicpt</Authors>
         <UserSecretsId>8bd67551-0cb1-4639-b33c-d5f2f082615d</UserSecretsId>
-        <Version>0.0.2</Version>
+        <Version>0.0.3</Version>
         <Description>贴吧操作库</Description>
         <PackageLicenseUrl>https://licenses.nuget.org/Unlicense</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/Juicpt/TbClient</RepositoryUrl>
@@ -21,8 +21,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Google.Protobuf" Version="3.28.2" />
-      <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0" />
+      <PackageReference Include="Google.Protobuf" Version="3.28.3" />
+      <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="System.IO.Hashing" Version="8.0.0" />
     </ItemGroup>

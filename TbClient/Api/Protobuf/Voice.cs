@@ -22,12 +22,13 @@ public static partial class VoiceReflection {
   static VoiceReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgtWb2ljZS5wcm90byIvCgVWb2ljZRITCgtkdXJpbmdfdGltZRgCIAEoBRIR",
-          "Cgl2b2ljZV9tZDUYAyABKAliBnByb3RvMw=="));
+          "CgtWb2ljZS5wcm90byJdCgVWb2ljZRIMCgR0eXBlGAEgASgFEhMKC2R1cmlu",
+          "Z190aW1lGAIgASgFEhEKCXZvaWNlX21kNRgDIAEoCRIRCgl2b2ljZV91cmwY",
+          "BCABKAkSCwoDdWlkGAUgASgDYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::Voice), global::Voice.Parser, new[]{ "DuringTime", "VoiceMd5" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::Voice), global::Voice.Parser, new[]{ "Type", "DuringTime", "VoiceMd5", "VoiceUrl", "Uid" }, null, null, null, null)
         }));
   }
   #endregion
@@ -70,8 +71,11 @@ public sealed partial class Voice : pb::IMessage<Voice>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public Voice(Voice other) : this() {
+    type_ = other.type_;
     duringTime_ = other.duringTime_;
     voiceMd5_ = other.voiceMd5_;
+    voiceUrl_ = other.voiceUrl_;
+    uid_ = other.uid_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -79,6 +83,18 @@ public sealed partial class Voice : pb::IMessage<Voice>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public Voice Clone() {
     return new Voice(this);
+  }
+
+  /// <summary>Field number for the "type" field.</summary>
+  public const int TypeFieldNumber = 1;
+  private int type_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int Type {
+    get { return type_; }
+    set {
+      type_ = value;
+    }
   }
 
   /// <summary>Field number for the "during_time" field.</summary>
@@ -105,6 +121,30 @@ public sealed partial class Voice : pb::IMessage<Voice>
     }
   }
 
+  /// <summary>Field number for the "voice_url" field.</summary>
+  public const int VoiceUrlFieldNumber = 4;
+  private string voiceUrl_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string VoiceUrl {
+    get { return voiceUrl_; }
+    set {
+      voiceUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "uid" field.</summary>
+  public const int UidFieldNumber = 5;
+  private long uid_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public long Uid {
+    get { return uid_; }
+    set {
+      uid_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override bool Equals(object other) {
@@ -120,8 +160,11 @@ public sealed partial class Voice : pb::IMessage<Voice>
     if (ReferenceEquals(other, this)) {
       return true;
     }
+    if (Type != other.Type) return false;
     if (DuringTime != other.DuringTime) return false;
     if (VoiceMd5 != other.VoiceMd5) return false;
+    if (VoiceUrl != other.VoiceUrl) return false;
+    if (Uid != other.Uid) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -129,8 +172,11 @@ public sealed partial class Voice : pb::IMessage<Voice>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public override int GetHashCode() {
     int hash = 1;
+    if (Type != 0) hash ^= Type.GetHashCode();
     if (DuringTime != 0) hash ^= DuringTime.GetHashCode();
     if (VoiceMd5.Length != 0) hash ^= VoiceMd5.GetHashCode();
+    if (VoiceUrl.Length != 0) hash ^= VoiceUrl.GetHashCode();
+    if (Uid != 0L) hash ^= Uid.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -149,6 +195,10 @@ public sealed partial class Voice : pb::IMessage<Voice>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     output.WriteRawMessage(this);
   #else
+    if (Type != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(Type);
+    }
     if (DuringTime != 0) {
       output.WriteRawTag(16);
       output.WriteInt32(DuringTime);
@@ -156,6 +206,14 @@ public sealed partial class Voice : pb::IMessage<Voice>
     if (VoiceMd5.Length != 0) {
       output.WriteRawTag(26);
       output.WriteString(VoiceMd5);
+    }
+    if (VoiceUrl.Length != 0) {
+      output.WriteRawTag(34);
+      output.WriteString(VoiceUrl);
+    }
+    if (Uid != 0L) {
+      output.WriteRawTag(40);
+      output.WriteInt64(Uid);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -167,6 +225,10 @@ public sealed partial class Voice : pb::IMessage<Voice>
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+    if (Type != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(Type);
+    }
     if (DuringTime != 0) {
       output.WriteRawTag(16);
       output.WriteInt32(DuringTime);
@@ -174,6 +236,14 @@ public sealed partial class Voice : pb::IMessage<Voice>
     if (VoiceMd5.Length != 0) {
       output.WriteRawTag(26);
       output.WriteString(VoiceMd5);
+    }
+    if (VoiceUrl.Length != 0) {
+      output.WriteRawTag(34);
+      output.WriteString(VoiceUrl);
+    }
+    if (Uid != 0L) {
+      output.WriteRawTag(40);
+      output.WriteInt64(Uid);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -185,11 +255,20 @@ public sealed partial class Voice : pb::IMessage<Voice>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public int CalculateSize() {
     int size = 0;
+    if (Type != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+    }
     if (DuringTime != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(DuringTime);
     }
     if (VoiceMd5.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(VoiceMd5);
+    }
+    if (VoiceUrl.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(VoiceUrl);
+    }
+    if (Uid != 0L) {
+      size += 1 + pb::CodedOutputStream.ComputeInt64Size(Uid);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -203,11 +282,20 @@ public sealed partial class Voice : pb::IMessage<Voice>
     if (other == null) {
       return;
     }
+    if (other.Type != 0) {
+      Type = other.Type;
+    }
     if (other.DuringTime != 0) {
       DuringTime = other.DuringTime;
     }
     if (other.VoiceMd5.Length != 0) {
       VoiceMd5 = other.VoiceMd5;
+    }
+    if (other.VoiceUrl.Length != 0) {
+      VoiceUrl = other.VoiceUrl;
+    }
+    if (other.Uid != 0L) {
+      Uid = other.Uid;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -228,12 +316,24 @@ public sealed partial class Voice : pb::IMessage<Voice>
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
+        case 8: {
+          Type = input.ReadInt32();
+          break;
+        }
         case 16: {
           DuringTime = input.ReadInt32();
           break;
         }
         case 26: {
           VoiceMd5 = input.ReadString();
+          break;
+        }
+        case 34: {
+          VoiceUrl = input.ReadString();
+          break;
+        }
+        case 40: {
+          Uid = input.ReadInt64();
           break;
         }
       }
@@ -255,12 +355,24 @@ public sealed partial class Voice : pb::IMessage<Voice>
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
           break;
+        case 8: {
+          Type = input.ReadInt32();
+          break;
+        }
         case 16: {
           DuringTime = input.ReadInt32();
           break;
         }
         case 26: {
           VoiceMd5 = input.ReadString();
+          break;
+        }
+        case 34: {
+          VoiceUrl = input.ReadString();
+          break;
+        }
+        case 40: {
+          Uid = input.ReadInt64();
           break;
         }
       }

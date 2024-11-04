@@ -1,12 +1,10 @@
-﻿using TbClient.Api.GetUInfoGetUserInfoApp;
-using TbClient.Api.GetUInfoGetUserInfoApp.Entities;
+﻿using TbClient.Api.GetUInfoGetUserInfoApp.Entities;
 using TbClient.Enums;
 
-namespace TbClient.Api.Profile.GetUInfoProfile;
+namespace TbClient.Api.Profile.GetUInfoProfile.Entities;
 
 public class UserInfoPf : UserInfoGuInfoApp
 {
-
     public string NickNameNew { get; init; } = "";
     public string TieBaUid { get; init; } = "";
     public int GLevel { get; init; }
@@ -65,11 +63,11 @@ public class UserInfoPf : UserInfoGuInfoApp
             PrivReply = userProto.PrivSets.Reply != 0 ? (PrivReply)userProto.PrivSets.Reply : PrivReply.All,
         };
     }
-    
+
 
     public override string ToString()
     {
         return
-            $"{nameof(NickNameNew)}: {NickNameNew}, {nameof(TieBaUid)}: {TieBaUid}, {nameof(GLevel)}: {GLevel}, {nameof(Age)}: {Age}, {nameof(PostNum)}: {PostNum}, {nameof(AgreeNum)}: {AgreeNum}, {nameof(FanNum)}: {FanNum}, {nameof(FollowNum)}: {FollowNum}, {nameof(ForumNum)}: {ForumNum}, {nameof(Sign)}: {Sign}, {nameof(Ip)}: {Ip}, {nameof(Icons)}: {Icons}, {nameof(VImage)}: {VImage}, {nameof(IsBlocked)}: {IsBlocked}, {nameof(PrivLike)}: {PrivLike}, {nameof(PrivReply)}: {PrivReply}, {nameof(NickName)}: {NickName}, {nameof(ShowName)}: {ShowName}, {nameof(LogName)}: {LogName}";
+            $"{nameof(NickNameNew)}: {NickNameNew}, {nameof(TieBaUid)}: {TieBaUid},{nameof(UserId)}: {UserId}, {nameof(GLevel)}: {GLevel}, {nameof(Age)}: {Age}, {nameof(PostNum)}: {PostNum}, {nameof(AgreeNum)}: {AgreeNum}, {nameof(FanNum)}: {FanNum}, {nameof(FollowNum)}: {FollowNum}, {nameof(ForumNum)}: {ForumNum}, {nameof(Sign)}: {Sign}, {nameof(Ip)}: {Ip}, {nameof(Icons)}: {Icons}, {nameof(VImage)}: {VImage}, {nameof(IsBlocked)}: {IsBlocked}, {nameof(PrivLike)}: {PrivLike}, {nameof(PrivReply)}: {PrivReply}, {nameof(NickName)}: {NickName}, {nameof(ShowName)}: {ShowName}, {nameof(LogName)}: {LogName}, {nameof(Portrait)}: {Portrait}";
     }
 }

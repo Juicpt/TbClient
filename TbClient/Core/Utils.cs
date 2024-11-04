@@ -7,7 +7,7 @@ public static class Utils
     public static string GenerateAndroidId()
     {
         // 创建一个长度为8的字节数组
-         var randomBytes = new byte[8];
+        var randomBytes = new byte[8];
 
         // 使用随机数生成器填充字节数组
         using (var rng = RandomNumberGenerator.Create())
@@ -18,22 +18,23 @@ public static class Utils
         // 将字节数组转换为十六进制字符串
         var hexString = BitConverter.ToString(randomBytes).Replace("-", "").ToLower();
 
-        return hexString; 
+        return hexString;
     }
-    
+
     public static byte[] ApplyPkcs7Padding(byte[] data, int blockSize)
     {
         var paddingSize = blockSize - (data.Length % blockSize);
         var paddedData = new byte[data.Length + paddingSize];
         Buffer.BlockCopy(data, 0, paddedData, 0, data.Length);
-        
+
         for (var i = data.Length; i < paddedData.Length; i++)
         {
             paddedData[i] = (byte)paddingSize;
         }
-        
+
         return paddedData;
     }
+
     public static byte[] RemovePkcs7Padding(byte[] paddedData, int blockSize)
     {
         if (paddedData.Length == 0)
@@ -58,5 +59,31 @@ public static class Utils
         return data;
     }
 
-    
+    /// <summary>
+    /// 判断是否是portrait
+    /// </summary>
+    /// <param name="portrait"></param>
+    /// <returns></returns>
+    public static bool IsPortrait(string portrait)
+    {
+        return portrait.Contains("tb.");
+    }
+
+    /// <summary>
+    /// 转换贴吧数字
+    /// </summary>
+    /// <param name="tbNum"></param>
+    /// <returns></returns>
+    public static int TbNumToInt(string tbNum)
+    {
+        if (!string.IsNullOrEmpty(tbNum) && tbNum.EndsWith('万'))
+        {
+            // 去掉字符串末尾的"万"，转换为浮点数后乘以10000
+            return (int)(double.Parse(tbNum.TrimEnd('万')) * 1e4);
+        }
+        else
+        {
+            return int.Parse(tbNum);
+        }
+    }
 }

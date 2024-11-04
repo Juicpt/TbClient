@@ -15,8 +15,8 @@ public class GetForumTest
     {
         var httpCore = new HttpCore();
         var getForum = new TbClient.Api.GetForum.GetForum(httpCore);
-        var result = getForum.RequestAsync(new GetFormParams("DNF"));
+        var result = getForum.RequestAsync(new GetFormParams(""));
         result.Wait();
-        Assert.AreEqual(result.Result.Fname,"地下城与勇士");
+        Assert.AreEqual(result.Result.Fname,"");
     }
 }

@@ -1,13 +1,11 @@
 ﻿using Newtonsoft.Json.Linq;
+using TbClient.Entities;
 
-namespace TbClient.Api.Login;
+namespace TbClient.Api.Login.Entities;
 
-public class UserInfoLogin
+public class UserInfoLogin:BaseUser
 {
-  
     public long UserId { get; init; }
-    public string Portrait { get; init; } = "";
-    public string UserName { get; init; } = "";
 
     public static UserInfoLogin FromTbData(JObject data)
     {

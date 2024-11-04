@@ -16,7 +16,7 @@ public class GetForumDetailTest
     {
         var httpCore = new HttpCore();
         var getForumDetail = new TbClient.Api.GetForumDetail.GetForumDetail(httpCore);
-        var requestAsync = getForumDetail.RequestAsync(81570);
+        var requestAsync = getForumDetail.RequestAsync(1);
         requestAsync.Wait();
         Console.WriteLine(requestAsync.Result);
     }

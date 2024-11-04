@@ -22,12 +22,14 @@ public static partial class AgreeReflection {
   static AgreeReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgtBZ3JlZS5wcm90byIwCgVBZ3JlZRIRCglhZ3JlZV9udW0YASABKAMSFAoM",
-          "ZGlzYWdyZWVfbnVtGAQgASgDYgZwcm90bzM="));
+          "CgtBZ3JlZS5wcm90byKBAQoFQWdyZWUSEQoJYWdyZWVfbnVtGAEgASgDEhEK",
+          "CWhhc19hZ3JlZRgCIAEoBRISCgphZ3JlZV90eXBlGAMgASgFEhQKDGRpc2Fn",
+          "cmVlX251bRgEIAEoAxIWCg5kaWZmX2FncmVlX251bRgFIAEoAxIQCghsel9h",
+          "Z3JlZRgGIAEoBWIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::Agree), global::Agree.Parser, new[]{ "AgreeNum", "DisagreeNum" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::Agree), global::Agree.Parser, new[]{ "AgreeNum", "HasAgree", "AgreeType", "DisagreeNum", "DiffAgreeNum", "LzAgree" }, null, null, null, null)
         }));
   }
   #endregion
@@ -71,7 +73,11 @@ public sealed partial class Agree : pb::IMessage<Agree>
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public Agree(Agree other) : this() {
     agreeNum_ = other.agreeNum_;
+    hasAgree_ = other.hasAgree_;
+    agreeType_ = other.agreeType_;
     disagreeNum_ = other.disagreeNum_;
+    diffAgreeNum_ = other.diffAgreeNum_;
+    lzAgree_ = other.lzAgree_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -93,6 +99,30 @@ public sealed partial class Agree : pb::IMessage<Agree>
     }
   }
 
+  /// <summary>Field number for the "has_agree" field.</summary>
+  public const int HasAgreeFieldNumber = 2;
+  private int hasAgree_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int HasAgree {
+    get { return hasAgree_; }
+    set {
+      hasAgree_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "agree_type" field.</summary>
+  public const int AgreeTypeFieldNumber = 3;
+  private int agreeType_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int AgreeType {
+    get { return agreeType_; }
+    set {
+      agreeType_ = value;
+    }
+  }
+
   /// <summary>Field number for the "disagree_num" field.</summary>
   public const int DisagreeNumFieldNumber = 4;
   private long disagreeNum_;
@@ -102,6 +132,30 @@ public sealed partial class Agree : pb::IMessage<Agree>
     get { return disagreeNum_; }
     set {
       disagreeNum_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "diff_agree_num" field.</summary>
+  public const int DiffAgreeNumFieldNumber = 5;
+  private long diffAgreeNum_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public long DiffAgreeNum {
+    get { return diffAgreeNum_; }
+    set {
+      diffAgreeNum_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "lz_agree" field.</summary>
+  public const int LzAgreeFieldNumber = 6;
+  private int lzAgree_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int LzAgree {
+    get { return lzAgree_; }
+    set {
+      lzAgree_ = value;
     }
   }
 
@@ -121,7 +175,11 @@ public sealed partial class Agree : pb::IMessage<Agree>
       return true;
     }
     if (AgreeNum != other.AgreeNum) return false;
+    if (HasAgree != other.HasAgree) return false;
+    if (AgreeType != other.AgreeType) return false;
     if (DisagreeNum != other.DisagreeNum) return false;
+    if (DiffAgreeNum != other.DiffAgreeNum) return false;
+    if (LzAgree != other.LzAgree) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -130,7 +188,11 @@ public sealed partial class Agree : pb::IMessage<Agree>
   public override int GetHashCode() {
     int hash = 1;
     if (AgreeNum != 0L) hash ^= AgreeNum.GetHashCode();
+    if (HasAgree != 0) hash ^= HasAgree.GetHashCode();
+    if (AgreeType != 0) hash ^= AgreeType.GetHashCode();
     if (DisagreeNum != 0L) hash ^= DisagreeNum.GetHashCode();
+    if (DiffAgreeNum != 0L) hash ^= DiffAgreeNum.GetHashCode();
+    if (LzAgree != 0) hash ^= LzAgree.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -153,9 +215,25 @@ public sealed partial class Agree : pb::IMessage<Agree>
       output.WriteRawTag(8);
       output.WriteInt64(AgreeNum);
     }
+    if (HasAgree != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(HasAgree);
+    }
+    if (AgreeType != 0) {
+      output.WriteRawTag(24);
+      output.WriteInt32(AgreeType);
+    }
     if (DisagreeNum != 0L) {
       output.WriteRawTag(32);
       output.WriteInt64(DisagreeNum);
+    }
+    if (DiffAgreeNum != 0L) {
+      output.WriteRawTag(40);
+      output.WriteInt64(DiffAgreeNum);
+    }
+    if (LzAgree != 0) {
+      output.WriteRawTag(48);
+      output.WriteInt32(LzAgree);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -171,9 +249,25 @@ public sealed partial class Agree : pb::IMessage<Agree>
       output.WriteRawTag(8);
       output.WriteInt64(AgreeNum);
     }
+    if (HasAgree != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(HasAgree);
+    }
+    if (AgreeType != 0) {
+      output.WriteRawTag(24);
+      output.WriteInt32(AgreeType);
+    }
     if (DisagreeNum != 0L) {
       output.WriteRawTag(32);
       output.WriteInt64(DisagreeNum);
+    }
+    if (DiffAgreeNum != 0L) {
+      output.WriteRawTag(40);
+      output.WriteInt64(DiffAgreeNum);
+    }
+    if (LzAgree != 0) {
+      output.WriteRawTag(48);
+      output.WriteInt32(LzAgree);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -188,8 +282,20 @@ public sealed partial class Agree : pb::IMessage<Agree>
     if (AgreeNum != 0L) {
       size += 1 + pb::CodedOutputStream.ComputeInt64Size(AgreeNum);
     }
+    if (HasAgree != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(HasAgree);
+    }
+    if (AgreeType != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(AgreeType);
+    }
     if (DisagreeNum != 0L) {
       size += 1 + pb::CodedOutputStream.ComputeInt64Size(DisagreeNum);
+    }
+    if (DiffAgreeNum != 0L) {
+      size += 1 + pb::CodedOutputStream.ComputeInt64Size(DiffAgreeNum);
+    }
+    if (LzAgree != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(LzAgree);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -206,8 +312,20 @@ public sealed partial class Agree : pb::IMessage<Agree>
     if (other.AgreeNum != 0L) {
       AgreeNum = other.AgreeNum;
     }
+    if (other.HasAgree != 0) {
+      HasAgree = other.HasAgree;
+    }
+    if (other.AgreeType != 0) {
+      AgreeType = other.AgreeType;
+    }
     if (other.DisagreeNum != 0L) {
       DisagreeNum = other.DisagreeNum;
+    }
+    if (other.DiffAgreeNum != 0L) {
+      DiffAgreeNum = other.DiffAgreeNum;
+    }
+    if (other.LzAgree != 0) {
+      LzAgree = other.LzAgree;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -232,8 +350,24 @@ public sealed partial class Agree : pb::IMessage<Agree>
           AgreeNum = input.ReadInt64();
           break;
         }
+        case 16: {
+          HasAgree = input.ReadInt32();
+          break;
+        }
+        case 24: {
+          AgreeType = input.ReadInt32();
+          break;
+        }
         case 32: {
           DisagreeNum = input.ReadInt64();
+          break;
+        }
+        case 40: {
+          DiffAgreeNum = input.ReadInt64();
+          break;
+        }
+        case 48: {
+          LzAgree = input.ReadInt32();
           break;
         }
       }
@@ -259,8 +393,24 @@ public sealed partial class Agree : pb::IMessage<Agree>
           AgreeNum = input.ReadInt64();
           break;
         }
+        case 16: {
+          HasAgree = input.ReadInt32();
+          break;
+        }
+        case 24: {
+          AgreeType = input.ReadInt32();
+          break;
+        }
         case 32: {
           DisagreeNum = input.ReadInt64();
+          break;
+        }
+        case 40: {
+          DiffAgreeNum = input.ReadInt64();
+          break;
+        }
+        case 48: {
+          LzAgree = input.ReadInt32();
           break;
         }
       }

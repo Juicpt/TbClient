@@ -22,30 +22,43 @@ public static partial class CommonReqReflection {
   static CommonReqReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg9Db21tb25SZXEucHJvdG8ixgYKCUNvbW1vblJlcRIUCgxfY2xpZW50X3R5",
+          "Cg9Db21tb25SZXEucHJvdG8iqAsKCUNvbW1vblJlcRIUCgxfY2xpZW50X3R5",
           "cGUYASABKAUSFwoPX2NsaWVudF92ZXJzaW9uGAIgASgJEhIKCl9jbGllbnRf",
-          "aWQYAyABKAkSEwoLX3Bob25lX2ltZWkYBSABKAkSDQoFX2Zyb20YBiABKAkS",
-          "DAoEY3VpZBgHIAEoCRISCgpfdGltZXN0YW1wGAggASgDEg0KBW1vZGVsGAkg",
-          "ASgJEg0KBUJEVVNTGAogASgJEgsKA3RicxgLIAEoCRIQCghuZXRfdHlwZRgM",
-          "IAEoBRIQCghwdmVyc2lvbhgYIAEoCRITCgtfb3NfdmVyc2lvbhgZIAEoCRIN",
-          "CgVicmFuZBgaIAEoCRIYChBsZWdvX2xpYl92ZXJzaW9uGBwgASgJEg8KB2Fw",
+          "aWQYAyABKAkSDAoEYXBpZBgEIAEoCRITCgtfcGhvbmVfaW1laRgFIAEoCRIM",
+          "CgRmcm9tGAYgASgJEgwKBGN1aWQYByABKAkSEgoKX3RpbWVzdGFtcBgIIAEo",
+          "AxINCgVtb2RlbBgJIAEoCRINCgVCRFVTUxgKIAEoCRILCgN0YnMYCyABKAkS",
+          "EAoIbmV0X3R5cGUYDCABKAUSEwoLc3ViYXBwX3R5cGUYDSABKAkSFgoOX3Bo",
+          "b25lX25ld2ltZWkYDiABKAkSCgoCa2EYDyABKAkSDQoFbV9hcGkYECABKAkS",
+          "DwoHbV9sb2dpZBgRIAEoCRIOCgZtX2Nvc3QYEiABKAkSEAoIbV9yZXN1bHQY",
+          "EyABKAkSEAoIbV9zaXplX3UYFCABKAkSEAoIbV9zaXplX2QYFSABKAkSEQoJ",
+          "c21hbGxmbG93GBYgASgJEgwKBHNpZ24YFyABKAkSEAoIcHZlcnNpb24YGCAB",
+          "KAkSEwoLX29zX3ZlcnNpb24YGSABKAkSDQoFYnJhbmQYGiABKAkSEgoKYnJh",
+          "bmRfdHlwZRgbIAEoCRIYChBsZWdvX2xpYl92ZXJzaW9uGBwgASgJEg8KB2Fw",
           "cGxpc3QYHSABKAkSDgoGc3Rva2VuGB4gASgJEgwKBHpfaWQYHyABKAkSFAoM",
-          "Y3VpZF9nYWxheHkyGCAgASgJEhAKCGN1aWRfZ2lkGCEgASgJEg4KBmMzX2Fp",
-          "ZBgjIAEoCRIRCglzYW1wbGVfaWQYJCABKAkSDQoFc2NyX3cYJSABKAUSDQoF",
-          "c2NyX2gYJiABKAUSDwoHc2NyX2RpcBgnIAEoARIOCgZxX3R5cGUYKCABKAUS",
-          "EwoLaXNfdGVlbmFnZXIYKSABKAUSDwoHc2RrX3ZlchgqIAEoCRIVCg1mcmFt",
-          "ZXdvcmtfdmVyGCsgASgJEhUKDW5hd3NfZ2FtZV92ZXIYLCABKAkSGAoQYWN0",
-          "aXZlX3RpbWVzdGFtcBgxIAEoAxIaChJmaXJzdF9pbnN0YWxsX3RpbWUYMiAB",
-          "KAMSGAoQbGFzdF91cGRhdGVfdGltZRgzIAEoAxIRCglldmVudF9kYXkYNSAB",
-          "KAkSEgoKYW5kcm9pZF9pZBg2IAEoCRINCgVjbW9kZRg3IAEoBRIUCgxzdGFy",
-          "dF9zY2hlbWUYOCABKAkSEgoKc3RhcnRfdHlwZRg5IAEoBRIMCgRpZGZ2GDwg",
-          "ASgJEg0KBWV4dHJhGD0gASgJEhIKCnVzZXJfYWdlbnQYPiABKAkSHwoXcGVy",
-          "c29uYWxpemVkX3JlY19zd2l0Y2gYPyABKAUSFAoMZGV2aWNlX3Njb3JlGEYg",
-          "ASgJYgZwcm90bzM="));
+          "Y3VpZF9nYWxheHkyGCAgASgJEhAKCGN1aWRfZ2lkGCEgASgJEgwKBG9haWQY",
+          "IiABKAkSDgoGYzNfYWlkGCMgASgJEhEKCXNhbXBsZV9pZBgkIAEoCRINCgVz",
+          "Y3JfdxglIAEoBRINCgVzY3JfaBgmIAEoBRIPCgdzY3JfZGlwGCcgASgBEg4K",
+          "BnFfdHlwZRgoIAEoBRITCgtpc190ZWVuYWdlchgpIAEoBRIPCgdzZGtfdmVy",
+          "GCogASgJEhUKDWZyYW1ld29ya192ZXIYKyABKAkSFQoNbmF3c19nYW1lX3Zl",
+          "chgsIAEoCRIMCgRpZGZhGC0gASgJEgwKBGRpYWMYLiABKAkSGAoQYWN0aXZl",
+          "X3RpbWVzdGFtcBgxIAEoAxIaChJmaXJzdF9pbnN0YWxsX3RpbWUYMiABKAMS",
+          "GAoQbGFzdF91cGRhdGVfdGltZRgzIAEoAxIRCglldmVudF9kYXkYNSABKAkS",
+          "EgoKYW5kcm9pZF9pZBg2IAEoCRINCgVjbW9kZRg3IAEoBRIUCgxzdGFydF9z",
+          "Y2hlbWUYOCABKAkSEgoKc3RhcnRfdHlwZRg5IAEoBRIUCgxzaG91YmFpX2N1",
+          "aWQYOiABKAkSCwoDbWFjGDsgASgJEgwKBGlkZnYYPCABKAkSDQoFZXh0cmEY",
+          "PSABKAkSEgoKdXNlcl9hZ2VudBg+IAEoCRIfChdwZXJzb25hbGl6ZWRfcmVj",
+          "X3N3aXRjaBg/IAEoBRIMCgRpZW1pGEAgASgJEg8KB2llbWl3ZW4YQSABKAkS",
+          "CwoDY2FtGEIgASgJEgwKBGFmZGkYQyABKAkSEgoKZGlfZGlvcmRuYRhEIAEo",
+          "CRIMCgR2ZmRpGEUgASgJEhQKDGRldmljZV9zY29yZRhGIAEoCRIRCglwdXJl",
+          "X21vZGUYRyABKAUSEAoIeGN4X21vZGUYSCABKAUSDQoFbGVkb20YSSABKAkS",
+          "DAoEZGlhbxhKIAEoCRISCgpub2lzcmV2X3NvGEsgASgJEg0KBWRuYXJiGEwg",
+          "ASgJEhIKCmVweXRfZG5hcmIYTSABKAkSDQoFd19yY3MYTiABKAkSDQoFaF9y",
+          "Y3MYTyABKAkSDwoHcGlkX3JjcxhQIAEoCRIUCgxuZWVkX2RlY3J5cHQYUSAB",
+          "KAUSGAoQbmVlZF9jYW1fZGVjcnlwdBhSIAEoBWIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CommonReq), global::CommonReq.Parser, new[]{ "ClientType", "ClientVersion", "ClientId", "PhoneImei", "From", "Cuid", "Timestamp", "Model", "BDUSS", "Tbs", "NetType", "Pversion", "OsVersion", "Brand", "LegoLibVersion", "Applist", "Stoken", "ZId", "CuidGalaxy2", "CuidGid", "C3Aid", "SampleId", "ScrW", "ScrH", "ScrDip", "QType", "IsTeenager", "SdkVer", "FrameworkVer", "NawsGameVer", "ActiveTimestamp", "FirstInstallTime", "LastUpdateTime", "EventDay", "AndroidId", "Cmode", "StartScheme", "StartType", "Idfv", "Extra", "UserAgent", "PersonalizedRecSwitch", "DeviceScore" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::CommonReq), global::CommonReq.Parser, new[]{ "ClientType", "ClientVersion", "ClientId", "Apid", "PhoneImei", "From", "Cuid", "Timestamp", "Model", "BDUSS", "Tbs", "NetType", "SubappType", "PhoneNewimei", "Ka", "MApi", "MLogid", "MCost", "MResult", "MSizeU", "MSizeD", "Smallflow", "Sign", "Pversion", "OsVersion", "Brand", "BrandType", "LegoLibVersion", "Applist", "Stoken", "ZId", "CuidGalaxy2", "CuidGid", "Oaid", "C3Aid", "SampleId", "ScrW", "ScrH", "ScrDip", "QType", "IsTeenager", "SdkVer", "FrameworkVer", "NawsGameVer", "Idfa", "Diac", "ActiveTimestamp", "FirstInstallTime", "LastUpdateTime", "EventDay", "AndroidId", "Cmode", "StartScheme", "StartType", "ShoubaiCuid", "Mac", "Idfv", "Extra", "UserAgent", "PersonalizedRecSwitch", "Iemi", "Iemiwen", "Cam", "Afdi", "DiDiordna", "Vfdi", "DeviceScore", "PureMode", "XcxMode", "Ledom", "Diao", "NoisrevSo", "Dnarb", "EpytDnarb", "WRcs", "HRcs", "PidRcs", "NeedDecrypt", "NeedCamDecrypt" }, null, null, null, null)
         }));
   }
   #endregion
@@ -91,23 +104,37 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     ClientType_ = other.ClientType_;
     ClientVersion_ = other.ClientVersion_;
     ClientId_ = other.ClientId_;
+    apid_ = other.apid_;
     PhoneImei_ = other.PhoneImei_;
-    From_ = other.From_;
+    from_ = other.from_;
     cuid_ = other.cuid_;
     Timestamp_ = other.Timestamp_;
     model_ = other.model_;
     bDUSS_ = other.bDUSS_;
     tbs_ = other.tbs_;
     netType_ = other.netType_;
+    subappType_ = other.subappType_;
+    PhoneNewimei_ = other.PhoneNewimei_;
+    ka_ = other.ka_;
+    mApi_ = other.mApi_;
+    mLogid_ = other.mLogid_;
+    mCost_ = other.mCost_;
+    mResult_ = other.mResult_;
+    mSizeU_ = other.mSizeU_;
+    mSizeD_ = other.mSizeD_;
+    smallflow_ = other.smallflow_;
+    sign_ = other.sign_;
     pversion_ = other.pversion_;
     OsVersion_ = other.OsVersion_;
     brand_ = other.brand_;
+    brandType_ = other.brandType_;
     legoLibVersion_ = other.legoLibVersion_;
     applist_ = other.applist_;
     stoken_ = other.stoken_;
     zId_ = other.zId_;
     cuidGalaxy2_ = other.cuidGalaxy2_;
     cuidGid_ = other.cuidGid_;
+    oaid_ = other.oaid_;
     c3Aid_ = other.c3Aid_;
     sampleId_ = other.sampleId_;
     scrW_ = other.scrW_;
@@ -118,6 +145,8 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     sdkVer_ = other.sdkVer_;
     frameworkVer_ = other.frameworkVer_;
     nawsGameVer_ = other.nawsGameVer_;
+    idfa_ = other.idfa_;
+    diac_ = other.diac_;
     activeTimestamp_ = other.activeTimestamp_;
     firstInstallTime_ = other.firstInstallTime_;
     lastUpdateTime_ = other.lastUpdateTime_;
@@ -126,11 +155,31 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     cmode_ = other.cmode_;
     startScheme_ = other.startScheme_;
     startType_ = other.startType_;
+    shoubaiCuid_ = other.shoubaiCuid_;
+    mac_ = other.mac_;
     idfv_ = other.idfv_;
     extra_ = other.extra_;
     userAgent_ = other.userAgent_;
     personalizedRecSwitch_ = other.personalizedRecSwitch_;
+    iemi_ = other.iemi_;
+    iemiwen_ = other.iemiwen_;
+    cam_ = other.cam_;
+    afdi_ = other.afdi_;
+    diDiordna_ = other.diDiordna_;
+    vfdi_ = other.vfdi_;
     deviceScore_ = other.deviceScore_;
+    pureMode_ = other.pureMode_;
+    xcxMode_ = other.xcxMode_;
+    ledom_ = other.ledom_;
+    diao_ = other.diao_;
+    noisrevSo_ = other.noisrevSo_;
+    dnarb_ = other.dnarb_;
+    epytDnarb_ = other.epytDnarb_;
+    wRcs_ = other.wRcs_;
+    hRcs_ = other.hRcs_;
+    pidRcs_ = other.pidRcs_;
+    needDecrypt_ = other.needDecrypt_;
+    needCamDecrypt_ = other.needCamDecrypt_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -176,6 +225,18 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
   }
 
+  /// <summary>Field number for the "apid" field.</summary>
+  public const int ApidFieldNumber = 4;
+  private string apid_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Apid {
+    get { return apid_; }
+    set {
+      apid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   /// <summary>Field number for the "_phone_imei" field.</summary>
   public const int PhoneImeiFieldNumber = 5;
   private string PhoneImei_ = "";
@@ -188,15 +249,15 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
   }
 
-  /// <summary>Field number for the "_from" field.</summary>
+  /// <summary>Field number for the "from" field.</summary>
   public const int FromFieldNumber = 6;
-  private string From_ = "";
+  private string from_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
   public string From {
-    get { return From_; }
+    get { return from_; }
     set {
-      From_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      from_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
@@ -272,6 +333,138 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
   }
 
+  /// <summary>Field number for the "subapp_type" field.</summary>
+  public const int SubappTypeFieldNumber = 13;
+  private string subappType_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string SubappType {
+    get { return subappType_; }
+    set {
+      subappType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "_phone_newimei" field.</summary>
+  public const int PhoneNewimeiFieldNumber = 14;
+  private string PhoneNewimei_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string PhoneNewimei {
+    get { return PhoneNewimei_; }
+    set {
+      PhoneNewimei_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "ka" field.</summary>
+  public const int KaFieldNumber = 15;
+  private string ka_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Ka {
+    get { return ka_; }
+    set {
+      ka_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "m_api" field.</summary>
+  public const int MApiFieldNumber = 16;
+  private string mApi_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string MApi {
+    get { return mApi_; }
+    set {
+      mApi_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "m_logid" field.</summary>
+  public const int MLogidFieldNumber = 17;
+  private string mLogid_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string MLogid {
+    get { return mLogid_; }
+    set {
+      mLogid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "m_cost" field.</summary>
+  public const int MCostFieldNumber = 18;
+  private string mCost_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string MCost {
+    get { return mCost_; }
+    set {
+      mCost_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "m_result" field.</summary>
+  public const int MResultFieldNumber = 19;
+  private string mResult_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string MResult {
+    get { return mResult_; }
+    set {
+      mResult_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "m_size_u" field.</summary>
+  public const int MSizeUFieldNumber = 20;
+  private string mSizeU_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string MSizeU {
+    get { return mSizeU_; }
+    set {
+      mSizeU_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "m_size_d" field.</summary>
+  public const int MSizeDFieldNumber = 21;
+  private string mSizeD_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string MSizeD {
+    get { return mSizeD_; }
+    set {
+      mSizeD_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "smallflow" field.</summary>
+  public const int SmallflowFieldNumber = 22;
+  private string smallflow_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Smallflow {
+    get { return smallflow_; }
+    set {
+      smallflow_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "sign" field.</summary>
+  public const int SignFieldNumber = 23;
+  private string sign_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Sign {
+    get { return sign_; }
+    set {
+      sign_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   /// <summary>Field number for the "pversion" field.</summary>
   public const int PversionFieldNumber = 24;
   private string pversion_ = "";
@@ -305,6 +498,18 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     get { return brand_; }
     set {
       brand_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "brand_type" field.</summary>
+  public const int BrandTypeFieldNumber = 27;
+  private string brandType_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string BrandType {
+    get { return brandType_; }
+    set {
+      brandType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
@@ -377,6 +582,18 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     get { return cuidGid_; }
     set {
       cuidGid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "oaid" field.</summary>
+  public const int OaidFieldNumber = 34;
+  private string oaid_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Oaid {
+    get { return oaid_; }
+    set {
+      oaid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
@@ -500,6 +717,30 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
   }
 
+  /// <summary>Field number for the "idfa" field.</summary>
+  public const int IdfaFieldNumber = 45;
+  private string idfa_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Idfa {
+    get { return idfa_; }
+    set {
+      idfa_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "diac" field.</summary>
+  public const int DiacFieldNumber = 46;
+  private string diac_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Diac {
+    get { return diac_; }
+    set {
+      diac_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   /// <summary>Field number for the "active_timestamp" field.</summary>
   public const int ActiveTimestampFieldNumber = 49;
   private long activeTimestamp_;
@@ -596,6 +837,30 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
   }
 
+  /// <summary>Field number for the "shoubai_cuid" field.</summary>
+  public const int ShoubaiCuidFieldNumber = 58;
+  private string shoubaiCuid_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string ShoubaiCuid {
+    get { return shoubaiCuid_; }
+    set {
+      shoubaiCuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "mac" field.</summary>
+  public const int MacFieldNumber = 59;
+  private string mac_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Mac {
+    get { return mac_; }
+    set {
+      mac_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   /// <summary>Field number for the "idfv" field.</summary>
   public const int IdfvFieldNumber = 60;
   private string idfv_ = "";
@@ -644,6 +909,78 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
   }
 
+  /// <summary>Field number for the "iemi" field.</summary>
+  public const int IemiFieldNumber = 64;
+  private string iemi_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Iemi {
+    get { return iemi_; }
+    set {
+      iemi_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "iemiwen" field.</summary>
+  public const int IemiwenFieldNumber = 65;
+  private string iemiwen_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Iemiwen {
+    get { return iemiwen_; }
+    set {
+      iemiwen_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "cam" field.</summary>
+  public const int CamFieldNumber = 66;
+  private string cam_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Cam {
+    get { return cam_; }
+    set {
+      cam_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "afdi" field.</summary>
+  public const int AfdiFieldNumber = 67;
+  private string afdi_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Afdi {
+    get { return afdi_; }
+    set {
+      afdi_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "di_diordna" field.</summary>
+  public const int DiDiordnaFieldNumber = 68;
+  private string diDiordna_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string DiDiordna {
+    get { return diDiordna_; }
+    set {
+      diDiordna_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "vfdi" field.</summary>
+  public const int VfdiFieldNumber = 69;
+  private string vfdi_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Vfdi {
+    get { return vfdi_; }
+    set {
+      vfdi_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   /// <summary>Field number for the "device_score" field.</summary>
   public const int DeviceScoreFieldNumber = 70;
   private string deviceScore_ = "";
@@ -653,6 +990,150 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     get { return deviceScore_; }
     set {
       deviceScore_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "pure_mode" field.</summary>
+  public const int PureModeFieldNumber = 71;
+  private int pureMode_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int PureMode {
+    get { return pureMode_; }
+    set {
+      pureMode_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "xcx_mode" field.</summary>
+  public const int XcxModeFieldNumber = 72;
+  private int xcxMode_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int XcxMode {
+    get { return xcxMode_; }
+    set {
+      xcxMode_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "ledom" field.</summary>
+  public const int LedomFieldNumber = 73;
+  private string ledom_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Ledom {
+    get { return ledom_; }
+    set {
+      ledom_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "diao" field.</summary>
+  public const int DiaoFieldNumber = 74;
+  private string diao_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Diao {
+    get { return diao_; }
+    set {
+      diao_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "noisrev_so" field.</summary>
+  public const int NoisrevSoFieldNumber = 75;
+  private string noisrevSo_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string NoisrevSo {
+    get { return noisrevSo_; }
+    set {
+      noisrevSo_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "dnarb" field.</summary>
+  public const int DnarbFieldNumber = 76;
+  private string dnarb_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string Dnarb {
+    get { return dnarb_; }
+    set {
+      dnarb_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "epyt_dnarb" field.</summary>
+  public const int EpytDnarbFieldNumber = 77;
+  private string epytDnarb_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string EpytDnarb {
+    get { return epytDnarb_; }
+    set {
+      epytDnarb_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "w_rcs" field.</summary>
+  public const int WRcsFieldNumber = 78;
+  private string wRcs_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string WRcs {
+    get { return wRcs_; }
+    set {
+      wRcs_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "h_rcs" field.</summary>
+  public const int HRcsFieldNumber = 79;
+  private string hRcs_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string HRcs {
+    get { return hRcs_; }
+    set {
+      hRcs_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "pid_rcs" field.</summary>
+  public const int PidRcsFieldNumber = 80;
+  private string pidRcs_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public string PidRcs {
+    get { return pidRcs_; }
+    set {
+      pidRcs_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "need_decrypt" field.</summary>
+  public const int NeedDecryptFieldNumber = 81;
+  private int needDecrypt_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int NeedDecrypt {
+    get { return needDecrypt_; }
+    set {
+      needDecrypt_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "need_cam_decrypt" field.</summary>
+  public const int NeedCamDecryptFieldNumber = 82;
+  private int needCamDecrypt_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+  public int NeedCamDecrypt {
+    get { return needCamDecrypt_; }
+    set {
+      needCamDecrypt_ = value;
     }
   }
 
@@ -674,6 +1155,7 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (ClientType != other.ClientType) return false;
     if (ClientVersion != other.ClientVersion) return false;
     if (ClientId != other.ClientId) return false;
+    if (Apid != other.Apid) return false;
     if (PhoneImei != other.PhoneImei) return false;
     if (From != other.From) return false;
     if (Cuid != other.Cuid) return false;
@@ -682,15 +1164,28 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (BDUSS != other.BDUSS) return false;
     if (Tbs != other.Tbs) return false;
     if (NetType != other.NetType) return false;
+    if (SubappType != other.SubappType) return false;
+    if (PhoneNewimei != other.PhoneNewimei) return false;
+    if (Ka != other.Ka) return false;
+    if (MApi != other.MApi) return false;
+    if (MLogid != other.MLogid) return false;
+    if (MCost != other.MCost) return false;
+    if (MResult != other.MResult) return false;
+    if (MSizeU != other.MSizeU) return false;
+    if (MSizeD != other.MSizeD) return false;
+    if (Smallflow != other.Smallflow) return false;
+    if (Sign != other.Sign) return false;
     if (Pversion != other.Pversion) return false;
     if (OsVersion != other.OsVersion) return false;
     if (Brand != other.Brand) return false;
+    if (BrandType != other.BrandType) return false;
     if (LegoLibVersion != other.LegoLibVersion) return false;
     if (Applist != other.Applist) return false;
     if (Stoken != other.Stoken) return false;
     if (ZId != other.ZId) return false;
     if (CuidGalaxy2 != other.CuidGalaxy2) return false;
     if (CuidGid != other.CuidGid) return false;
+    if (Oaid != other.Oaid) return false;
     if (C3Aid != other.C3Aid) return false;
     if (SampleId != other.SampleId) return false;
     if (ScrW != other.ScrW) return false;
@@ -701,6 +1196,8 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (SdkVer != other.SdkVer) return false;
     if (FrameworkVer != other.FrameworkVer) return false;
     if (NawsGameVer != other.NawsGameVer) return false;
+    if (Idfa != other.Idfa) return false;
+    if (Diac != other.Diac) return false;
     if (ActiveTimestamp != other.ActiveTimestamp) return false;
     if (FirstInstallTime != other.FirstInstallTime) return false;
     if (LastUpdateTime != other.LastUpdateTime) return false;
@@ -709,11 +1206,31 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (Cmode != other.Cmode) return false;
     if (StartScheme != other.StartScheme) return false;
     if (StartType != other.StartType) return false;
+    if (ShoubaiCuid != other.ShoubaiCuid) return false;
+    if (Mac != other.Mac) return false;
     if (Idfv != other.Idfv) return false;
     if (Extra != other.Extra) return false;
     if (UserAgent != other.UserAgent) return false;
     if (PersonalizedRecSwitch != other.PersonalizedRecSwitch) return false;
+    if (Iemi != other.Iemi) return false;
+    if (Iemiwen != other.Iemiwen) return false;
+    if (Cam != other.Cam) return false;
+    if (Afdi != other.Afdi) return false;
+    if (DiDiordna != other.DiDiordna) return false;
+    if (Vfdi != other.Vfdi) return false;
     if (DeviceScore != other.DeviceScore) return false;
+    if (PureMode != other.PureMode) return false;
+    if (XcxMode != other.XcxMode) return false;
+    if (Ledom != other.Ledom) return false;
+    if (Diao != other.Diao) return false;
+    if (NoisrevSo != other.NoisrevSo) return false;
+    if (Dnarb != other.Dnarb) return false;
+    if (EpytDnarb != other.EpytDnarb) return false;
+    if (WRcs != other.WRcs) return false;
+    if (HRcs != other.HRcs) return false;
+    if (PidRcs != other.PidRcs) return false;
+    if (NeedDecrypt != other.NeedDecrypt) return false;
+    if (NeedCamDecrypt != other.NeedCamDecrypt) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -724,6 +1241,7 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (ClientType != 0) hash ^= ClientType.GetHashCode();
     if (ClientVersion.Length != 0) hash ^= ClientVersion.GetHashCode();
     if (ClientId.Length != 0) hash ^= ClientId.GetHashCode();
+    if (Apid.Length != 0) hash ^= Apid.GetHashCode();
     if (PhoneImei.Length != 0) hash ^= PhoneImei.GetHashCode();
     if (From.Length != 0) hash ^= From.GetHashCode();
     if (Cuid.Length != 0) hash ^= Cuid.GetHashCode();
@@ -732,15 +1250,28 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (BDUSS.Length != 0) hash ^= BDUSS.GetHashCode();
     if (Tbs.Length != 0) hash ^= Tbs.GetHashCode();
     if (NetType != 0) hash ^= NetType.GetHashCode();
+    if (SubappType.Length != 0) hash ^= SubappType.GetHashCode();
+    if (PhoneNewimei.Length != 0) hash ^= PhoneNewimei.GetHashCode();
+    if (Ka.Length != 0) hash ^= Ka.GetHashCode();
+    if (MApi.Length != 0) hash ^= MApi.GetHashCode();
+    if (MLogid.Length != 0) hash ^= MLogid.GetHashCode();
+    if (MCost.Length != 0) hash ^= MCost.GetHashCode();
+    if (MResult.Length != 0) hash ^= MResult.GetHashCode();
+    if (MSizeU.Length != 0) hash ^= MSizeU.GetHashCode();
+    if (MSizeD.Length != 0) hash ^= MSizeD.GetHashCode();
+    if (Smallflow.Length != 0) hash ^= Smallflow.GetHashCode();
+    if (Sign.Length != 0) hash ^= Sign.GetHashCode();
     if (Pversion.Length != 0) hash ^= Pversion.GetHashCode();
     if (OsVersion.Length != 0) hash ^= OsVersion.GetHashCode();
     if (Brand.Length != 0) hash ^= Brand.GetHashCode();
+    if (BrandType.Length != 0) hash ^= BrandType.GetHashCode();
     if (LegoLibVersion.Length != 0) hash ^= LegoLibVersion.GetHashCode();
     if (Applist.Length != 0) hash ^= Applist.GetHashCode();
     if (Stoken.Length != 0) hash ^= Stoken.GetHashCode();
     if (ZId.Length != 0) hash ^= ZId.GetHashCode();
     if (CuidGalaxy2.Length != 0) hash ^= CuidGalaxy2.GetHashCode();
     if (CuidGid.Length != 0) hash ^= CuidGid.GetHashCode();
+    if (Oaid.Length != 0) hash ^= Oaid.GetHashCode();
     if (C3Aid.Length != 0) hash ^= C3Aid.GetHashCode();
     if (SampleId.Length != 0) hash ^= SampleId.GetHashCode();
     if (ScrW != 0) hash ^= ScrW.GetHashCode();
@@ -751,6 +1282,8 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (SdkVer.Length != 0) hash ^= SdkVer.GetHashCode();
     if (FrameworkVer.Length != 0) hash ^= FrameworkVer.GetHashCode();
     if (NawsGameVer.Length != 0) hash ^= NawsGameVer.GetHashCode();
+    if (Idfa.Length != 0) hash ^= Idfa.GetHashCode();
+    if (Diac.Length != 0) hash ^= Diac.GetHashCode();
     if (ActiveTimestamp != 0L) hash ^= ActiveTimestamp.GetHashCode();
     if (FirstInstallTime != 0L) hash ^= FirstInstallTime.GetHashCode();
     if (LastUpdateTime != 0L) hash ^= LastUpdateTime.GetHashCode();
@@ -759,11 +1292,31 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (Cmode != 0) hash ^= Cmode.GetHashCode();
     if (StartScheme.Length != 0) hash ^= StartScheme.GetHashCode();
     if (StartType != 0) hash ^= StartType.GetHashCode();
+    if (ShoubaiCuid.Length != 0) hash ^= ShoubaiCuid.GetHashCode();
+    if (Mac.Length != 0) hash ^= Mac.GetHashCode();
     if (Idfv.Length != 0) hash ^= Idfv.GetHashCode();
     if (Extra.Length != 0) hash ^= Extra.GetHashCode();
     if (UserAgent.Length != 0) hash ^= UserAgent.GetHashCode();
     if (PersonalizedRecSwitch != 0) hash ^= PersonalizedRecSwitch.GetHashCode();
+    if (Iemi.Length != 0) hash ^= Iemi.GetHashCode();
+    if (Iemiwen.Length != 0) hash ^= Iemiwen.GetHashCode();
+    if (Cam.Length != 0) hash ^= Cam.GetHashCode();
+    if (Afdi.Length != 0) hash ^= Afdi.GetHashCode();
+    if (DiDiordna.Length != 0) hash ^= DiDiordna.GetHashCode();
+    if (Vfdi.Length != 0) hash ^= Vfdi.GetHashCode();
     if (DeviceScore.Length != 0) hash ^= DeviceScore.GetHashCode();
+    if (PureMode != 0) hash ^= PureMode.GetHashCode();
+    if (XcxMode != 0) hash ^= XcxMode.GetHashCode();
+    if (Ledom.Length != 0) hash ^= Ledom.GetHashCode();
+    if (Diao.Length != 0) hash ^= Diao.GetHashCode();
+    if (NoisrevSo.Length != 0) hash ^= NoisrevSo.GetHashCode();
+    if (Dnarb.Length != 0) hash ^= Dnarb.GetHashCode();
+    if (EpytDnarb.Length != 0) hash ^= EpytDnarb.GetHashCode();
+    if (WRcs.Length != 0) hash ^= WRcs.GetHashCode();
+    if (HRcs.Length != 0) hash ^= HRcs.GetHashCode();
+    if (PidRcs.Length != 0) hash ^= PidRcs.GetHashCode();
+    if (NeedDecrypt != 0) hash ^= NeedDecrypt.GetHashCode();
+    if (NeedCamDecrypt != 0) hash ^= NeedCamDecrypt.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -794,6 +1347,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(26);
       output.WriteString(ClientId);
     }
+    if (Apid.Length != 0) {
+      output.WriteRawTag(34);
+      output.WriteString(Apid);
+    }
     if (PhoneImei.Length != 0) {
       output.WriteRawTag(42);
       output.WriteString(PhoneImei);
@@ -826,6 +1383,50 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(96);
       output.WriteInt32(NetType);
     }
+    if (SubappType.Length != 0) {
+      output.WriteRawTag(106);
+      output.WriteString(SubappType);
+    }
+    if (PhoneNewimei.Length != 0) {
+      output.WriteRawTag(114);
+      output.WriteString(PhoneNewimei);
+    }
+    if (Ka.Length != 0) {
+      output.WriteRawTag(122);
+      output.WriteString(Ka);
+    }
+    if (MApi.Length != 0) {
+      output.WriteRawTag(130, 1);
+      output.WriteString(MApi);
+    }
+    if (MLogid.Length != 0) {
+      output.WriteRawTag(138, 1);
+      output.WriteString(MLogid);
+    }
+    if (MCost.Length != 0) {
+      output.WriteRawTag(146, 1);
+      output.WriteString(MCost);
+    }
+    if (MResult.Length != 0) {
+      output.WriteRawTag(154, 1);
+      output.WriteString(MResult);
+    }
+    if (MSizeU.Length != 0) {
+      output.WriteRawTag(162, 1);
+      output.WriteString(MSizeU);
+    }
+    if (MSizeD.Length != 0) {
+      output.WriteRawTag(170, 1);
+      output.WriteString(MSizeD);
+    }
+    if (Smallflow.Length != 0) {
+      output.WriteRawTag(178, 1);
+      output.WriteString(Smallflow);
+    }
+    if (Sign.Length != 0) {
+      output.WriteRawTag(186, 1);
+      output.WriteString(Sign);
+    }
     if (Pversion.Length != 0) {
       output.WriteRawTag(194, 1);
       output.WriteString(Pversion);
@@ -837,6 +1438,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (Brand.Length != 0) {
       output.WriteRawTag(210, 1);
       output.WriteString(Brand);
+    }
+    if (BrandType.Length != 0) {
+      output.WriteRawTag(218, 1);
+      output.WriteString(BrandType);
     }
     if (LegoLibVersion.Length != 0) {
       output.WriteRawTag(226, 1);
@@ -861,6 +1466,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (CuidGid.Length != 0) {
       output.WriteRawTag(138, 2);
       output.WriteString(CuidGid);
+    }
+    if (Oaid.Length != 0) {
+      output.WriteRawTag(146, 2);
+      output.WriteString(Oaid);
     }
     if (C3Aid.Length != 0) {
       output.WriteRawTag(154, 2);
@@ -902,6 +1511,14 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(226, 2);
       output.WriteString(NawsGameVer);
     }
+    if (Idfa.Length != 0) {
+      output.WriteRawTag(234, 2);
+      output.WriteString(Idfa);
+    }
+    if (Diac.Length != 0) {
+      output.WriteRawTag(242, 2);
+      output.WriteString(Diac);
+    }
     if (ActiveTimestamp != 0L) {
       output.WriteRawTag(136, 3);
       output.WriteInt64(ActiveTimestamp);
@@ -934,6 +1551,14 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(200, 3);
       output.WriteInt32(StartType);
     }
+    if (ShoubaiCuid.Length != 0) {
+      output.WriteRawTag(210, 3);
+      output.WriteString(ShoubaiCuid);
+    }
+    if (Mac.Length != 0) {
+      output.WriteRawTag(218, 3);
+      output.WriteString(Mac);
+    }
     if (Idfv.Length != 0) {
       output.WriteRawTag(226, 3);
       output.WriteString(Idfv);
@@ -950,9 +1575,81 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(248, 3);
       output.WriteInt32(PersonalizedRecSwitch);
     }
+    if (Iemi.Length != 0) {
+      output.WriteRawTag(130, 4);
+      output.WriteString(Iemi);
+    }
+    if (Iemiwen.Length != 0) {
+      output.WriteRawTag(138, 4);
+      output.WriteString(Iemiwen);
+    }
+    if (Cam.Length != 0) {
+      output.WriteRawTag(146, 4);
+      output.WriteString(Cam);
+    }
+    if (Afdi.Length != 0) {
+      output.WriteRawTag(154, 4);
+      output.WriteString(Afdi);
+    }
+    if (DiDiordna.Length != 0) {
+      output.WriteRawTag(162, 4);
+      output.WriteString(DiDiordna);
+    }
+    if (Vfdi.Length != 0) {
+      output.WriteRawTag(170, 4);
+      output.WriteString(Vfdi);
+    }
     if (DeviceScore.Length != 0) {
       output.WriteRawTag(178, 4);
       output.WriteString(DeviceScore);
+    }
+    if (PureMode != 0) {
+      output.WriteRawTag(184, 4);
+      output.WriteInt32(PureMode);
+    }
+    if (XcxMode != 0) {
+      output.WriteRawTag(192, 4);
+      output.WriteInt32(XcxMode);
+    }
+    if (Ledom.Length != 0) {
+      output.WriteRawTag(202, 4);
+      output.WriteString(Ledom);
+    }
+    if (Diao.Length != 0) {
+      output.WriteRawTag(210, 4);
+      output.WriteString(Diao);
+    }
+    if (NoisrevSo.Length != 0) {
+      output.WriteRawTag(218, 4);
+      output.WriteString(NoisrevSo);
+    }
+    if (Dnarb.Length != 0) {
+      output.WriteRawTag(226, 4);
+      output.WriteString(Dnarb);
+    }
+    if (EpytDnarb.Length != 0) {
+      output.WriteRawTag(234, 4);
+      output.WriteString(EpytDnarb);
+    }
+    if (WRcs.Length != 0) {
+      output.WriteRawTag(242, 4);
+      output.WriteString(WRcs);
+    }
+    if (HRcs.Length != 0) {
+      output.WriteRawTag(250, 4);
+      output.WriteString(HRcs);
+    }
+    if (PidRcs.Length != 0) {
+      output.WriteRawTag(130, 5);
+      output.WriteString(PidRcs);
+    }
+    if (NeedDecrypt != 0) {
+      output.WriteRawTag(136, 5);
+      output.WriteInt32(NeedDecrypt);
+    }
+    if (NeedCamDecrypt != 0) {
+      output.WriteRawTag(144, 5);
+      output.WriteInt32(NeedCamDecrypt);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -976,6 +1673,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(26);
       output.WriteString(ClientId);
     }
+    if (Apid.Length != 0) {
+      output.WriteRawTag(34);
+      output.WriteString(Apid);
+    }
     if (PhoneImei.Length != 0) {
       output.WriteRawTag(42);
       output.WriteString(PhoneImei);
@@ -1008,6 +1709,50 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(96);
       output.WriteInt32(NetType);
     }
+    if (SubappType.Length != 0) {
+      output.WriteRawTag(106);
+      output.WriteString(SubappType);
+    }
+    if (PhoneNewimei.Length != 0) {
+      output.WriteRawTag(114);
+      output.WriteString(PhoneNewimei);
+    }
+    if (Ka.Length != 0) {
+      output.WriteRawTag(122);
+      output.WriteString(Ka);
+    }
+    if (MApi.Length != 0) {
+      output.WriteRawTag(130, 1);
+      output.WriteString(MApi);
+    }
+    if (MLogid.Length != 0) {
+      output.WriteRawTag(138, 1);
+      output.WriteString(MLogid);
+    }
+    if (MCost.Length != 0) {
+      output.WriteRawTag(146, 1);
+      output.WriteString(MCost);
+    }
+    if (MResult.Length != 0) {
+      output.WriteRawTag(154, 1);
+      output.WriteString(MResult);
+    }
+    if (MSizeU.Length != 0) {
+      output.WriteRawTag(162, 1);
+      output.WriteString(MSizeU);
+    }
+    if (MSizeD.Length != 0) {
+      output.WriteRawTag(170, 1);
+      output.WriteString(MSizeD);
+    }
+    if (Smallflow.Length != 0) {
+      output.WriteRawTag(178, 1);
+      output.WriteString(Smallflow);
+    }
+    if (Sign.Length != 0) {
+      output.WriteRawTag(186, 1);
+      output.WriteString(Sign);
+    }
     if (Pversion.Length != 0) {
       output.WriteRawTag(194, 1);
       output.WriteString(Pversion);
@@ -1019,6 +1764,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (Brand.Length != 0) {
       output.WriteRawTag(210, 1);
       output.WriteString(Brand);
+    }
+    if (BrandType.Length != 0) {
+      output.WriteRawTag(218, 1);
+      output.WriteString(BrandType);
     }
     if (LegoLibVersion.Length != 0) {
       output.WriteRawTag(226, 1);
@@ -1043,6 +1792,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (CuidGid.Length != 0) {
       output.WriteRawTag(138, 2);
       output.WriteString(CuidGid);
+    }
+    if (Oaid.Length != 0) {
+      output.WriteRawTag(146, 2);
+      output.WriteString(Oaid);
     }
     if (C3Aid.Length != 0) {
       output.WriteRawTag(154, 2);
@@ -1084,6 +1837,14 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(226, 2);
       output.WriteString(NawsGameVer);
     }
+    if (Idfa.Length != 0) {
+      output.WriteRawTag(234, 2);
+      output.WriteString(Idfa);
+    }
+    if (Diac.Length != 0) {
+      output.WriteRawTag(242, 2);
+      output.WriteString(Diac);
+    }
     if (ActiveTimestamp != 0L) {
       output.WriteRawTag(136, 3);
       output.WriteInt64(ActiveTimestamp);
@@ -1116,6 +1877,14 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(200, 3);
       output.WriteInt32(StartType);
     }
+    if (ShoubaiCuid.Length != 0) {
+      output.WriteRawTag(210, 3);
+      output.WriteString(ShoubaiCuid);
+    }
+    if (Mac.Length != 0) {
+      output.WriteRawTag(218, 3);
+      output.WriteString(Mac);
+    }
     if (Idfv.Length != 0) {
       output.WriteRawTag(226, 3);
       output.WriteString(Idfv);
@@ -1132,9 +1901,81 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
       output.WriteRawTag(248, 3);
       output.WriteInt32(PersonalizedRecSwitch);
     }
+    if (Iemi.Length != 0) {
+      output.WriteRawTag(130, 4);
+      output.WriteString(Iemi);
+    }
+    if (Iemiwen.Length != 0) {
+      output.WriteRawTag(138, 4);
+      output.WriteString(Iemiwen);
+    }
+    if (Cam.Length != 0) {
+      output.WriteRawTag(146, 4);
+      output.WriteString(Cam);
+    }
+    if (Afdi.Length != 0) {
+      output.WriteRawTag(154, 4);
+      output.WriteString(Afdi);
+    }
+    if (DiDiordna.Length != 0) {
+      output.WriteRawTag(162, 4);
+      output.WriteString(DiDiordna);
+    }
+    if (Vfdi.Length != 0) {
+      output.WriteRawTag(170, 4);
+      output.WriteString(Vfdi);
+    }
     if (DeviceScore.Length != 0) {
       output.WriteRawTag(178, 4);
       output.WriteString(DeviceScore);
+    }
+    if (PureMode != 0) {
+      output.WriteRawTag(184, 4);
+      output.WriteInt32(PureMode);
+    }
+    if (XcxMode != 0) {
+      output.WriteRawTag(192, 4);
+      output.WriteInt32(XcxMode);
+    }
+    if (Ledom.Length != 0) {
+      output.WriteRawTag(202, 4);
+      output.WriteString(Ledom);
+    }
+    if (Diao.Length != 0) {
+      output.WriteRawTag(210, 4);
+      output.WriteString(Diao);
+    }
+    if (NoisrevSo.Length != 0) {
+      output.WriteRawTag(218, 4);
+      output.WriteString(NoisrevSo);
+    }
+    if (Dnarb.Length != 0) {
+      output.WriteRawTag(226, 4);
+      output.WriteString(Dnarb);
+    }
+    if (EpytDnarb.Length != 0) {
+      output.WriteRawTag(234, 4);
+      output.WriteString(EpytDnarb);
+    }
+    if (WRcs.Length != 0) {
+      output.WriteRawTag(242, 4);
+      output.WriteString(WRcs);
+    }
+    if (HRcs.Length != 0) {
+      output.WriteRawTag(250, 4);
+      output.WriteString(HRcs);
+    }
+    if (PidRcs.Length != 0) {
+      output.WriteRawTag(130, 5);
+      output.WriteString(PidRcs);
+    }
+    if (NeedDecrypt != 0) {
+      output.WriteRawTag(136, 5);
+      output.WriteInt32(NeedDecrypt);
+    }
+    if (NeedCamDecrypt != 0) {
+      output.WriteRawTag(144, 5);
+      output.WriteInt32(NeedCamDecrypt);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(ref output);
@@ -1154,6 +1995,9 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
     if (ClientId.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientId);
+    }
+    if (Apid.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Apid);
     }
     if (PhoneImei.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneImei);
@@ -1179,6 +2023,39 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (NetType != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(NetType);
     }
+    if (SubappType.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(SubappType);
+    }
+    if (PhoneNewimei.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNewimei);
+    }
+    if (Ka.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Ka);
+    }
+    if (MApi.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(MApi);
+    }
+    if (MLogid.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(MLogid);
+    }
+    if (MCost.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(MCost);
+    }
+    if (MResult.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(MResult);
+    }
+    if (MSizeU.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(MSizeU);
+    }
+    if (MSizeD.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(MSizeD);
+    }
+    if (Smallflow.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Smallflow);
+    }
+    if (Sign.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Sign);
+    }
     if (Pversion.Length != 0) {
       size += 2 + pb::CodedOutputStream.ComputeStringSize(Pversion);
     }
@@ -1187,6 +2064,9 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
     if (Brand.Length != 0) {
       size += 2 + pb::CodedOutputStream.ComputeStringSize(Brand);
+    }
+    if (BrandType.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(BrandType);
     }
     if (LegoLibVersion.Length != 0) {
       size += 2 + pb::CodedOutputStream.ComputeStringSize(LegoLibVersion);
@@ -1205,6 +2085,9 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
     if (CuidGid.Length != 0) {
       size += 2 + pb::CodedOutputStream.ComputeStringSize(CuidGid);
+    }
+    if (Oaid.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Oaid);
     }
     if (C3Aid.Length != 0) {
       size += 2 + pb::CodedOutputStream.ComputeStringSize(C3Aid);
@@ -1236,6 +2119,12 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (NawsGameVer.Length != 0) {
       size += 2 + pb::CodedOutputStream.ComputeStringSize(NawsGameVer);
     }
+    if (Idfa.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Idfa);
+    }
+    if (Diac.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Diac);
+    }
     if (ActiveTimestamp != 0L) {
       size += 2 + pb::CodedOutputStream.ComputeInt64Size(ActiveTimestamp);
     }
@@ -1260,6 +2149,12 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (StartType != 0) {
       size += 2 + pb::CodedOutputStream.ComputeInt32Size(StartType);
     }
+    if (ShoubaiCuid.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(ShoubaiCuid);
+    }
+    if (Mac.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Mac);
+    }
     if (Idfv.Length != 0) {
       size += 2 + pb::CodedOutputStream.ComputeStringSize(Idfv);
     }
@@ -1272,8 +2167,62 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (PersonalizedRecSwitch != 0) {
       size += 2 + pb::CodedOutputStream.ComputeInt32Size(PersonalizedRecSwitch);
     }
+    if (Iemi.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Iemi);
+    }
+    if (Iemiwen.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Iemiwen);
+    }
+    if (Cam.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Cam);
+    }
+    if (Afdi.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Afdi);
+    }
+    if (DiDiordna.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(DiDiordna);
+    }
+    if (Vfdi.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Vfdi);
+    }
     if (DeviceScore.Length != 0) {
       size += 2 + pb::CodedOutputStream.ComputeStringSize(DeviceScore);
+    }
+    if (PureMode != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeInt32Size(PureMode);
+    }
+    if (XcxMode != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeInt32Size(XcxMode);
+    }
+    if (Ledom.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Ledom);
+    }
+    if (Diao.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Diao);
+    }
+    if (NoisrevSo.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(NoisrevSo);
+    }
+    if (Dnarb.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(Dnarb);
+    }
+    if (EpytDnarb.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(EpytDnarb);
+    }
+    if (WRcs.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(WRcs);
+    }
+    if (HRcs.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(HRcs);
+    }
+    if (PidRcs.Length != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeStringSize(PidRcs);
+    }
+    if (NeedDecrypt != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeInt32Size(NeedDecrypt);
+    }
+    if (NeedCamDecrypt != 0) {
+      size += 2 + pb::CodedOutputStream.ComputeInt32Size(NeedCamDecrypt);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -1295,6 +2244,9 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
     if (other.ClientId.Length != 0) {
       ClientId = other.ClientId;
+    }
+    if (other.Apid.Length != 0) {
+      Apid = other.Apid;
     }
     if (other.PhoneImei.Length != 0) {
       PhoneImei = other.PhoneImei;
@@ -1320,6 +2272,39 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (other.NetType != 0) {
       NetType = other.NetType;
     }
+    if (other.SubappType.Length != 0) {
+      SubappType = other.SubappType;
+    }
+    if (other.PhoneNewimei.Length != 0) {
+      PhoneNewimei = other.PhoneNewimei;
+    }
+    if (other.Ka.Length != 0) {
+      Ka = other.Ka;
+    }
+    if (other.MApi.Length != 0) {
+      MApi = other.MApi;
+    }
+    if (other.MLogid.Length != 0) {
+      MLogid = other.MLogid;
+    }
+    if (other.MCost.Length != 0) {
+      MCost = other.MCost;
+    }
+    if (other.MResult.Length != 0) {
+      MResult = other.MResult;
+    }
+    if (other.MSizeU.Length != 0) {
+      MSizeU = other.MSizeU;
+    }
+    if (other.MSizeD.Length != 0) {
+      MSizeD = other.MSizeD;
+    }
+    if (other.Smallflow.Length != 0) {
+      Smallflow = other.Smallflow;
+    }
+    if (other.Sign.Length != 0) {
+      Sign = other.Sign;
+    }
     if (other.Pversion.Length != 0) {
       Pversion = other.Pversion;
     }
@@ -1328,6 +2313,9 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
     if (other.Brand.Length != 0) {
       Brand = other.Brand;
+    }
+    if (other.BrandType.Length != 0) {
+      BrandType = other.BrandType;
     }
     if (other.LegoLibVersion.Length != 0) {
       LegoLibVersion = other.LegoLibVersion;
@@ -1346,6 +2334,9 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     }
     if (other.CuidGid.Length != 0) {
       CuidGid = other.CuidGid;
+    }
+    if (other.Oaid.Length != 0) {
+      Oaid = other.Oaid;
     }
     if (other.C3Aid.Length != 0) {
       C3Aid = other.C3Aid;
@@ -1377,6 +2368,12 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (other.NawsGameVer.Length != 0) {
       NawsGameVer = other.NawsGameVer;
     }
+    if (other.Idfa.Length != 0) {
+      Idfa = other.Idfa;
+    }
+    if (other.Diac.Length != 0) {
+      Diac = other.Diac;
+    }
     if (other.ActiveTimestamp != 0L) {
       ActiveTimestamp = other.ActiveTimestamp;
     }
@@ -1401,6 +2398,12 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (other.StartType != 0) {
       StartType = other.StartType;
     }
+    if (other.ShoubaiCuid.Length != 0) {
+      ShoubaiCuid = other.ShoubaiCuid;
+    }
+    if (other.Mac.Length != 0) {
+      Mac = other.Mac;
+    }
     if (other.Idfv.Length != 0) {
       Idfv = other.Idfv;
     }
@@ -1413,8 +2416,62 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
     if (other.PersonalizedRecSwitch != 0) {
       PersonalizedRecSwitch = other.PersonalizedRecSwitch;
     }
+    if (other.Iemi.Length != 0) {
+      Iemi = other.Iemi;
+    }
+    if (other.Iemiwen.Length != 0) {
+      Iemiwen = other.Iemiwen;
+    }
+    if (other.Cam.Length != 0) {
+      Cam = other.Cam;
+    }
+    if (other.Afdi.Length != 0) {
+      Afdi = other.Afdi;
+    }
+    if (other.DiDiordna.Length != 0) {
+      DiDiordna = other.DiDiordna;
+    }
+    if (other.Vfdi.Length != 0) {
+      Vfdi = other.Vfdi;
+    }
     if (other.DeviceScore.Length != 0) {
       DeviceScore = other.DeviceScore;
+    }
+    if (other.PureMode != 0) {
+      PureMode = other.PureMode;
+    }
+    if (other.XcxMode != 0) {
+      XcxMode = other.XcxMode;
+    }
+    if (other.Ledom.Length != 0) {
+      Ledom = other.Ledom;
+    }
+    if (other.Diao.Length != 0) {
+      Diao = other.Diao;
+    }
+    if (other.NoisrevSo.Length != 0) {
+      NoisrevSo = other.NoisrevSo;
+    }
+    if (other.Dnarb.Length != 0) {
+      Dnarb = other.Dnarb;
+    }
+    if (other.EpytDnarb.Length != 0) {
+      EpytDnarb = other.EpytDnarb;
+    }
+    if (other.WRcs.Length != 0) {
+      WRcs = other.WRcs;
+    }
+    if (other.HRcs.Length != 0) {
+      HRcs = other.HRcs;
+    }
+    if (other.PidRcs.Length != 0) {
+      PidRcs = other.PidRcs;
+    }
+    if (other.NeedDecrypt != 0) {
+      NeedDecrypt = other.NeedDecrypt;
+    }
+    if (other.NeedCamDecrypt != 0) {
+      NeedCamDecrypt = other.NeedCamDecrypt;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -1445,6 +2502,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
         }
         case 26: {
           ClientId = input.ReadString();
+          break;
+        }
+        case 34: {
+          Apid = input.ReadString();
           break;
         }
         case 42: {
@@ -1479,6 +2540,50 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
           NetType = input.ReadInt32();
           break;
         }
+        case 106: {
+          SubappType = input.ReadString();
+          break;
+        }
+        case 114: {
+          PhoneNewimei = input.ReadString();
+          break;
+        }
+        case 122: {
+          Ka = input.ReadString();
+          break;
+        }
+        case 130: {
+          MApi = input.ReadString();
+          break;
+        }
+        case 138: {
+          MLogid = input.ReadString();
+          break;
+        }
+        case 146: {
+          MCost = input.ReadString();
+          break;
+        }
+        case 154: {
+          MResult = input.ReadString();
+          break;
+        }
+        case 162: {
+          MSizeU = input.ReadString();
+          break;
+        }
+        case 170: {
+          MSizeD = input.ReadString();
+          break;
+        }
+        case 178: {
+          Smallflow = input.ReadString();
+          break;
+        }
+        case 186: {
+          Sign = input.ReadString();
+          break;
+        }
         case 194: {
           Pversion = input.ReadString();
           break;
@@ -1489,6 +2594,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
         }
         case 210: {
           Brand = input.ReadString();
+          break;
+        }
+        case 218: {
+          BrandType = input.ReadString();
           break;
         }
         case 226: {
@@ -1513,6 +2622,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
         }
         case 266: {
           CuidGid = input.ReadString();
+          break;
+        }
+        case 274: {
+          Oaid = input.ReadString();
           break;
         }
         case 282: {
@@ -1555,6 +2668,14 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
           NawsGameVer = input.ReadString();
           break;
         }
+        case 362: {
+          Idfa = input.ReadString();
+          break;
+        }
+        case 370: {
+          Diac = input.ReadString();
+          break;
+        }
         case 392: {
           ActiveTimestamp = input.ReadInt64();
           break;
@@ -1587,6 +2708,14 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
           StartType = input.ReadInt32();
           break;
         }
+        case 466: {
+          ShoubaiCuid = input.ReadString();
+          break;
+        }
+        case 474: {
+          Mac = input.ReadString();
+          break;
+        }
         case 482: {
           Idfv = input.ReadString();
           break;
@@ -1603,8 +2732,80 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
           PersonalizedRecSwitch = input.ReadInt32();
           break;
         }
+        case 514: {
+          Iemi = input.ReadString();
+          break;
+        }
+        case 522: {
+          Iemiwen = input.ReadString();
+          break;
+        }
+        case 530: {
+          Cam = input.ReadString();
+          break;
+        }
+        case 538: {
+          Afdi = input.ReadString();
+          break;
+        }
+        case 546: {
+          DiDiordna = input.ReadString();
+          break;
+        }
+        case 554: {
+          Vfdi = input.ReadString();
+          break;
+        }
         case 562: {
           DeviceScore = input.ReadString();
+          break;
+        }
+        case 568: {
+          PureMode = input.ReadInt32();
+          break;
+        }
+        case 576: {
+          XcxMode = input.ReadInt32();
+          break;
+        }
+        case 586: {
+          Ledom = input.ReadString();
+          break;
+        }
+        case 594: {
+          Diao = input.ReadString();
+          break;
+        }
+        case 602: {
+          NoisrevSo = input.ReadString();
+          break;
+        }
+        case 610: {
+          Dnarb = input.ReadString();
+          break;
+        }
+        case 618: {
+          EpytDnarb = input.ReadString();
+          break;
+        }
+        case 626: {
+          WRcs = input.ReadString();
+          break;
+        }
+        case 634: {
+          HRcs = input.ReadString();
+          break;
+        }
+        case 642: {
+          PidRcs = input.ReadString();
+          break;
+        }
+        case 648: {
+          NeedDecrypt = input.ReadInt32();
+          break;
+        }
+        case 656: {
+          NeedCamDecrypt = input.ReadInt32();
           break;
         }
       }
@@ -1638,6 +2839,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
           ClientId = input.ReadString();
           break;
         }
+        case 34: {
+          Apid = input.ReadString();
+          break;
+        }
         case 42: {
           PhoneImei = input.ReadString();
           break;
@@ -1670,6 +2875,50 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
           NetType = input.ReadInt32();
           break;
         }
+        case 106: {
+          SubappType = input.ReadString();
+          break;
+        }
+        case 114: {
+          PhoneNewimei = input.ReadString();
+          break;
+        }
+        case 122: {
+          Ka = input.ReadString();
+          break;
+        }
+        case 130: {
+          MApi = input.ReadString();
+          break;
+        }
+        case 138: {
+          MLogid = input.ReadString();
+          break;
+        }
+        case 146: {
+          MCost = input.ReadString();
+          break;
+        }
+        case 154: {
+          MResult = input.ReadString();
+          break;
+        }
+        case 162: {
+          MSizeU = input.ReadString();
+          break;
+        }
+        case 170: {
+          MSizeD = input.ReadString();
+          break;
+        }
+        case 178: {
+          Smallflow = input.ReadString();
+          break;
+        }
+        case 186: {
+          Sign = input.ReadString();
+          break;
+        }
         case 194: {
           Pversion = input.ReadString();
           break;
@@ -1680,6 +2929,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
         }
         case 210: {
           Brand = input.ReadString();
+          break;
+        }
+        case 218: {
+          BrandType = input.ReadString();
           break;
         }
         case 226: {
@@ -1704,6 +2957,10 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
         }
         case 266: {
           CuidGid = input.ReadString();
+          break;
+        }
+        case 274: {
+          Oaid = input.ReadString();
           break;
         }
         case 282: {
@@ -1746,6 +3003,14 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
           NawsGameVer = input.ReadString();
           break;
         }
+        case 362: {
+          Idfa = input.ReadString();
+          break;
+        }
+        case 370: {
+          Diac = input.ReadString();
+          break;
+        }
         case 392: {
           ActiveTimestamp = input.ReadInt64();
           break;
@@ -1778,6 +3043,14 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
           StartType = input.ReadInt32();
           break;
         }
+        case 466: {
+          ShoubaiCuid = input.ReadString();
+          break;
+        }
+        case 474: {
+          Mac = input.ReadString();
+          break;
+        }
         case 482: {
           Idfv = input.ReadString();
           break;
@@ -1794,8 +3067,80 @@ public sealed partial class CommonReq : pb::IMessage<CommonReq>
           PersonalizedRecSwitch = input.ReadInt32();
           break;
         }
+        case 514: {
+          Iemi = input.ReadString();
+          break;
+        }
+        case 522: {
+          Iemiwen = input.ReadString();
+          break;
+        }
+        case 530: {
+          Cam = input.ReadString();
+          break;
+        }
+        case 538: {
+          Afdi = input.ReadString();
+          break;
+        }
+        case 546: {
+          DiDiordna = input.ReadString();
+          break;
+        }
+        case 554: {
+          Vfdi = input.ReadString();
+          break;
+        }
         case 562: {
           DeviceScore = input.ReadString();
+          break;
+        }
+        case 568: {
+          PureMode = input.ReadInt32();
+          break;
+        }
+        case 576: {
+          XcxMode = input.ReadInt32();
+          break;
+        }
+        case 586: {
+          Ledom = input.ReadString();
+          break;
+        }
+        case 594: {
+          Diao = input.ReadString();
+          break;
+        }
+        case 602: {
+          NoisrevSo = input.ReadString();
+          break;
+        }
+        case 610: {
+          Dnarb = input.ReadString();
+          break;
+        }
+        case 618: {
+          EpytDnarb = input.ReadString();
+          break;
+        }
+        case 626: {
+          WRcs = input.ReadString();
+          break;
+        }
+        case 634: {
+          HRcs = input.ReadString();
+          break;
+        }
+        case 642: {
+          PidRcs = input.ReadString();
+          break;
+        }
+        case 648: {
+          NeedDecrypt = input.ReadInt32();
+          break;
+        }
+        case 656: {
+          NeedCamDecrypt = input.ReadInt32();
           break;
         }
       }

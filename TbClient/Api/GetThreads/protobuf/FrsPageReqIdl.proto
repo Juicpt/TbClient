@@ -12,6 +12,7 @@ message FrsPageReqIdl {
         int32 cid = 5;
         int32 pn = 15;
         int32 sort_type = 47;
+        int32 load_type = 49;
     }
     DataReq data = 1;
 }

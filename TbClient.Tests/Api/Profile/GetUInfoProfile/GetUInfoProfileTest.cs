@@ -16,7 +16,7 @@ public class GetUInfoProfileTest
     {
         var httpCore = new HttpCore();
         var getUInfoProfile = new GetUInfoProfile<int>(httpCore);
-        var requestAsync = getUInfoProfile.RequestAsync(2075805759);
+        var requestAsync = getUInfoProfile.RequestAsync(1);
         requestAsync.Wait();
         Console.WriteLine(requestAsync.Result);
     }

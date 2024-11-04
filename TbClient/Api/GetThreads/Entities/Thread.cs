@@ -1,5 +1,6 @@
 ﻿using TbClient.Api.Entities;
 using TbClient.Api.Profile.GetUInfoProfile;
+using TbClient.Api.Profile.GetUInfoProfile.Entities;
 
 namespace TbClient.Api.GetThreads.Entities;
 
@@ -25,7 +26,7 @@ public class Thread
     public ShareThread? ShareThread { get; set; }
     public int ViewNum { get; set; } = 0;
     public int ReplyNum { get; set; } = 0;
-    public int ShareNum { get; set; } = 0;
+    public long ShareNum { get; set; } = 0;
     public long Agree { get; set; } = 0;
     public long Disagree { get; set; } = 0;
     public int CreateTime { get; set; } = 0;

@@ -15,7 +15,7 @@ public class GetUInfoGetUserInfoAppTest
     {
         var httpCore = new HttpCore();
         var getUInfoGetUserInfoApp = new TbClient.Api.GetUInfoGetUserInfoApp.GetUInfoGetUserInfoApp(httpCore);
-        var requestAsync = getUInfoGetUserInfoApp.RequestAsync(2075805759);
+        var requestAsync = getUInfoGetUserInfoApp.RequestAsync(1);
         requestAsync.Wait();
         Console.WriteLine(requestAsync.Result);
     }

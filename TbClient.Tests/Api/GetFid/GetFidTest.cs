@@ -15,7 +15,7 @@ public class GetFidTest
     {
         var httpCore = new HttpCore();
         var getFid = new TbClient.Api.GetFid.GetFid(httpCore);
-        var requestAsync = getFid.RequestAsync("地下城与勇士");
+        var requestAsync = getFid.RequestAsync("");
         requestAsync.Wait();
         Console.WriteLine(requestAsync.Result);
     }

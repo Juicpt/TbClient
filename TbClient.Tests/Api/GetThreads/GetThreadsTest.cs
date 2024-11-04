@@ -16,7 +16,7 @@ public class GetThreadsTest
     {
         var httpCore = new HttpCore();
         var getThreads = new TbClient.Api.GetThreads.GetThreads(httpCore);
-        var requestAsync = getThreads.RequestAsync("地下城与勇士",1,30,1,1);
+        var requestAsync = getThreads.RequestAsync("",1,30,1,1);
         requestAsync.Wait();
         Console.WriteLine(requestAsync.Result);
     }

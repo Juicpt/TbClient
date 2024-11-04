@@ -24,27 +24,30 @@ public static partial class FrsPageResIdlReflection {
         string.Concat(
           "ChNGcnNQYWdlUmVzSWRsLnByb3RvGgtFcnJvci5wcm90bxoKUGFnZS5wcm90",
           "bxoQVGhyZWFkSW5mby5wcm90bxoKVXNlci5wcm90bxoQRnJzVGFiSW5mby5w",
-          "cm90byL2BAoNRnJzUGFnZVJlc0lkbBIVCgVlcnJvchgBIAEoCzIGLkVycm9y",
-          "EiQKBGRhdGEYAiABKAsyFi5GcnNQYWdlUmVzSWRsLkRhdGFSZXMapwQKB0Rh",
-          "dGFSZXMSLwoFZm9ydW0YAiABKAsyIC5GcnNQYWdlUmVzSWRsLkRhdGFSZXMu",
-          "Rm9ydW1JbmZvEhMKBHBhZ2UYBCABKAsyBS5QYWdlEiAKC3RocmVhZF9saXN0",
-          "GAcgAygLMgsuVGhyZWFkSW5mbxIYCgl1c2VyX2xpc3QYESADKAsyBS5Vc2Vy",
-          "EjcKDG5hdl90YWJfaW5mbxglIAEoCzIhLkZyc1BhZ2VSZXNJZGwuRGF0YVJl",
-          "cy5OYXZUYWJJbmZvEjoKCmZvcnVtX3J1bGUYaSABKAsyJi5GcnNQYWdlUmVz",
-          "SWRsLkRhdGFSZXMuRm9ydW1SdWxlU3RhdHVzGtEBCglGb3J1bUluZm8SCgoC",
-          "aWQYASABKAMSDAoEbmFtZRgCIAEoCRITCgtmaXJzdF9jbGFzcxgDIAEoCRIU",
-          "CgxzZWNvbmRfY2xhc3MYBCABKAkSEgoKbWVtYmVyX251bRgJIAEoBRISCgp0",
-          "aHJlYWRfbnVtGAogASgFEhAKCHBvc3RfbnVtGAsgASgFEjoKCG1hbmFnZXJz",
-          "GBEgAygLMiguRnJzUGFnZVJlc0lkbC5EYXRhUmVzLkZvcnVtSW5mby5NYW5h",
-          "Z2VyGgkKB01hbmFnZXIaJgoKTmF2VGFiSW5mbxIYCgN0YWIYASADKAsyCy5G",
-          "cnNUYWJJbmZvGikKD0ZvcnVtUnVsZVN0YXR1cxIWCg5oYXNfZm9ydW1fcnVs",
-          "ZRgEIAEoBWIGcHJvdG8z"));
+          "cm90bxoTTGF5b3V0RmFjdG9yeS5wcm90byLZBQoNRnJzUGFnZVJlc0lkbBIV",
+          "CgVlcnJvchgBIAEoCzIGLkVycm9yEiQKBGRhdGEYAiABKAsyFi5GcnNQYWdl",
+          "UmVzSWRsLkRhdGFSZXMaigUKB0RhdGFSZXMSLwoFZm9ydW0YAiABKAsyIC5G",
+          "cnNQYWdlUmVzSWRsLkRhdGFSZXMuRm9ydW1JbmZvEhMKBHBhZ2UYBCABKAsy",
+          "BS5QYWdlEiAKC3RocmVhZF9saXN0GAcgAygLMgsuVGhyZWFkSW5mbxIYCgl1",
+          "c2VyX2xpc3QYESADKAsyBS5Vc2VyEjcKDG5hdl90YWJfaW5mbxglIAEoCzIh",
+          "LkZyc1BhZ2VSZXNJZGwuRGF0YVJlcy5OYXZUYWJJbmZvEjoKCmZvcnVtX3J1",
+          "bGUYaSABKAsyJi5GcnNQYWdlUmVzSWRsLkRhdGFSZXMuRm9ydW1SdWxlU3Rh",
+          "dHVzEjIKCXBhZ2VfZGF0YRh+IAEoCzIfLkZyc1BhZ2VSZXNJZGwuRGF0YVJl",
+          "cy5QYWdlRGF0YRrRAQoJRm9ydW1JbmZvEgoKAmlkGAEgASgDEgwKBG5hbWUY",
+          "AiABKAkSEwoLZmlyc3RfY2xhc3MYAyABKAkSFAoMc2Vjb25kX2NsYXNzGAQg",
+          "ASgJEhIKCm1lbWJlcl9udW0YCSABKAUSEgoKdGhyZWFkX251bRgKIAEoBRIQ",
+          "Cghwb3N0X251bRgLIAEoBRI6CghtYW5hZ2VycxgRIAMoCzIoLkZyc1BhZ2VS",
+          "ZXNJZGwuRGF0YVJlcy5Gb3J1bUluZm8uTWFuYWdlchoJCgdNYW5hZ2VyGiYK",
+          "Ck5hdlRhYkluZm8SGAoDdGFiGAEgAygLMgsuRnJzVGFiSW5mbxopCg9Gb3J1",
+          "bVJ1bGVTdGF0dXMSFgoOaGFzX2ZvcnVtX3J1bGUYBCABKAUaLQoIUGFnZURh",
+          "dGESIQoJZmVlZF9saXN0GAIgAygLMg4uTGF5b3V0RmFjdG9yeWIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ErrorReflection.Descriptor, global::PageReflection.Descriptor, global::ThreadInfoReflection.Descriptor, global::UserReflection.Descriptor, global::FrsTabInfoReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::ErrorReflection.Descriptor, global::PageReflection.Descriptor, global::ThreadInfoReflection.Descriptor, global::UserReflection.Descriptor, global::FrsTabInfoReflection.Descriptor, global::LayoutFactoryReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl), global::FrsPageResIdl.Parser, new[]{ "Error", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes), global::FrsPageResIdl.Types.DataRes.Parser, new[]{ "Forum", "Page", "ThreadList", "UserList", "NavTabInfo", "ForumRule" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes.Types.ForumInfo), global::FrsPageResIdl.Types.DataRes.Types.ForumInfo.Parser, new[]{ "Id", "Name", "FirstClass", "SecondClass", "MemberNum", "ThreadNum", "PostNum", "Managers" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes.Types.ForumInfo.Types.Manager), global::FrsPageResIdl.Types.DataRes.Types.ForumInfo.Types.Manager.Parser, null, null, null, null, null)}),
+          new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl), global::FrsPageResIdl.Parser, new[]{ "Error", "Data" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes), global::FrsPageResIdl.Types.DataRes.Parser, new[]{ "Forum", "Page", "ThreadList", "UserList", "NavTabInfo", "ForumRule", "PageData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes.Types.ForumInfo), global::FrsPageResIdl.Types.DataRes.Types.ForumInfo.Parser, new[]{ "Id", "Name", "FirstClass", "SecondClass", "MemberNum", "ThreadNum", "PostNum", "Managers" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes.Types.ForumInfo.Types.Manager), global::FrsPageResIdl.Types.DataRes.Types.ForumInfo.Types.Manager.Parser, null, null, null, null, null)}),
           new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes.Types.NavTabInfo), global::FrsPageResIdl.Types.DataRes.Types.NavTabInfo.Parser, new[]{ "Tab" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes.Types.ForumRuleStatus), global::FrsPageResIdl.Types.DataRes.Types.ForumRuleStatus.Parser, new[]{ "HasForumRule" }, null, null, null, null)})})
+          new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes.Types.ForumRuleStatus), global::FrsPageResIdl.Types.DataRes.Types.ForumRuleStatus.Parser, new[]{ "HasForumRule" }, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::FrsPageResIdl.Types.DataRes.Types.PageData), global::FrsPageResIdl.Types.DataRes.Types.PageData.Parser, new[]{ "FeedList" }, null, null, null, null)})})
         }));
   }
   #endregion
@@ -350,6 +353,7 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
         userList_ = other.userList_.Clone();
         navTabInfo_ = other.navTabInfo_ != null ? other.navTabInfo_.Clone() : null;
         forumRule_ = other.forumRule_ != null ? other.forumRule_.Clone() : null;
+        pageData_ = other.pageData_ != null ? other.pageData_.Clone() : null;
         _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
       }
 
@@ -429,6 +433,18 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
         }
       }
 
+      /// <summary>Field number for the "page_data" field.</summary>
+      public const int PageDataFieldNumber = 126;
+      private global::FrsPageResIdl.Types.DataRes.Types.PageData pageData_;
+      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+      public global::FrsPageResIdl.Types.DataRes.Types.PageData PageData {
+        get { return pageData_; }
+        set {
+          pageData_ = value;
+        }
+      }
+
       [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
       [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
       public override bool Equals(object other) {
@@ -450,6 +466,7 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
         if(!userList_.Equals(other.userList_)) return false;
         if (!object.Equals(NavTabInfo, other.NavTabInfo)) return false;
         if (!object.Equals(ForumRule, other.ForumRule)) return false;
+        if (!object.Equals(PageData, other.PageData)) return false;
         return Equals(_unknownFields, other._unknownFields);
       }
 
@@ -463,6 +480,7 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
         hash ^= userList_.GetHashCode();
         if (navTabInfo_ != null) hash ^= NavTabInfo.GetHashCode();
         if (forumRule_ != null) hash ^= ForumRule.GetHashCode();
+        if (pageData_ != null) hash ^= PageData.GetHashCode();
         if (_unknownFields != null) {
           hash ^= _unknownFields.GetHashCode();
         }
@@ -499,6 +517,10 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
           output.WriteRawTag(202, 6);
           output.WriteMessage(ForumRule);
         }
+        if (pageData_ != null) {
+          output.WriteRawTag(242, 7);
+          output.WriteMessage(PageData);
+        }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(output);
         }
@@ -527,6 +549,10 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
           output.WriteRawTag(202, 6);
           output.WriteMessage(ForumRule);
         }
+        if (pageData_ != null) {
+          output.WriteRawTag(242, 7);
+          output.WriteMessage(PageData);
+        }
         if (_unknownFields != null) {
           _unknownFields.WriteTo(ref output);
         }
@@ -550,6 +576,9 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
         }
         if (forumRule_ != null) {
           size += 2 + pb::CodedOutputStream.ComputeMessageSize(ForumRule);
+        }
+        if (pageData_ != null) {
+          size += 2 + pb::CodedOutputStream.ComputeMessageSize(PageData);
         }
         if (_unknownFields != null) {
           size += _unknownFields.CalculateSize();
@@ -588,6 +617,12 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
             ForumRule = new global::FrsPageResIdl.Types.DataRes.Types.ForumRuleStatus();
           }
           ForumRule.MergeFrom(other.ForumRule);
+        }
+        if (other.pageData_ != null) {
+          if (pageData_ == null) {
+            PageData = new global::FrsPageResIdl.Types.DataRes.Types.PageData();
+          }
+          PageData.MergeFrom(other.PageData);
         }
         _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
       }
@@ -644,6 +679,13 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
               input.ReadMessage(ForumRule);
               break;
             }
+            case 1010: {
+              if (pageData_ == null) {
+                PageData = new global::FrsPageResIdl.Types.DataRes.Types.PageData();
+              }
+              input.ReadMessage(PageData);
+              break;
+            }
           }
         }
       #endif
@@ -697,6 +739,13 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
                 ForumRule = new global::FrsPageResIdl.Types.DataRes.Types.ForumRuleStatus();
               }
               input.ReadMessage(ForumRule);
+              break;
+            }
+            case 1010: {
+              if (pageData_ == null) {
+                PageData = new global::FrsPageResIdl.Types.DataRes.Types.PageData();
+              }
+              input.ReadMessage(PageData);
               break;
             }
           }
@@ -1704,6 +1753,194 @@ public sealed partial class FrsPageResIdl : pb::IMessage<FrsPageResIdl>
                   break;
                 case 32: {
                   HasForumRule = input.ReadInt32();
+                  break;
+                }
+              }
+            }
+          }
+          #endif
+
+        }
+
+        [global::System.SerializableAttribute]
+        [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+        public sealed partial class PageData : pb::IMessage<PageData>
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            , pb::IBufferMessage
+        #endif
+        {
+          private static readonly pb::MessageParser<PageData> _parser = new pb::MessageParser<PageData>(() => new PageData());
+          private pb::UnknownFieldSet _unknownFields;
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public static pb::MessageParser<PageData> Parser { get { return _parser; } }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public static pbr::MessageDescriptor Descriptor {
+            get { return global::FrsPageResIdl.Types.DataRes.Descriptor.NestedTypes[3]; }
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          pbr::MessageDescriptor pb::IMessage.Descriptor {
+            get { return Descriptor; }
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public PageData() {
+            OnConstruction();
+          }
+
+          partial void OnConstruction();
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public PageData(PageData other) : this() {
+            feedList_ = other.feedList_.Clone();
+            _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public PageData Clone() {
+            return new PageData(this);
+          }
+
+          /// <summary>Field number for the "feed_list" field.</summary>
+          public const int FeedListFieldNumber = 2;
+          private static readonly pb::FieldCodec<global::LayoutFactory> _repeated_feedList_codec
+              = pb::FieldCodec.ForMessage(18, global::LayoutFactory.Parser);
+          private readonly pbc::RepeatedField<global::LayoutFactory> feedList_ = new pbc::RepeatedField<global::LayoutFactory>();
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public pbc::RepeatedField<global::LayoutFactory> FeedList {
+            get { return feedList_; }
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public override bool Equals(object other) {
+            return Equals(other as PageData);
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public bool Equals(PageData other) {
+            if (ReferenceEquals(other, null)) {
+              return false;
+            }
+            if (ReferenceEquals(other, this)) {
+              return true;
+            }
+            if(!feedList_.Equals(other.feedList_)) return false;
+            return Equals(_unknownFields, other._unknownFields);
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public override int GetHashCode() {
+            int hash = 1;
+            hash ^= feedList_.GetHashCode();
+            if (_unknownFields != null) {
+              hash ^= _unknownFields.GetHashCode();
+            }
+            return hash;
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public override string ToString() {
+            return pb::JsonFormatter.ToDiagnosticString(this);
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public void WriteTo(pb::CodedOutputStream output) {
+          #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            output.WriteRawMessage(this);
+          #else
+            feedList_.WriteTo(output, _repeated_feedList_codec);
+            if (_unknownFields != null) {
+              _unknownFields.WriteTo(output);
+            }
+          #endif
+          }
+
+          #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+            feedList_.WriteTo(ref output, _repeated_feedList_codec);
+            if (_unknownFields != null) {
+              _unknownFields.WriteTo(ref output);
+            }
+          }
+          #endif
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public int CalculateSize() {
+            int size = 0;
+            size += feedList_.CalculateSize(_repeated_feedList_codec);
+            if (_unknownFields != null) {
+              size += _unknownFields.CalculateSize();
+            }
+            return size;
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public void MergeFrom(PageData other) {
+            if (other == null) {
+              return;
+            }
+            feedList_.Add(other.feedList_);
+            _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+          }
+
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          public void MergeFrom(pb::CodedInputStream input) {
+          #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            input.ReadRawMessage(this);
+          #else
+            uint tag;
+            while ((tag = input.ReadTag()) != 0) {
+            if ((tag & 7) == 4) {
+              // Abort on any end group tag.
+              return;
+            }
+            switch(tag) {
+                default:
+                  _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                  break;
+                case 18: {
+                  feedList_.AddEntriesFrom(input, _repeated_feedList_codec);
+                  break;
+                }
+              }
+            }
+          #endif
+          }
+
+          #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+          [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+          void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+            uint tag;
+            while ((tag = input.ReadTag()) != 0) {
+            if ((tag & 7) == 4) {
+              // Abort on any end group tag.
+              return;
+            }
+            switch(tag) {
+                default:
+                  _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                  break;
+                case 18: {
+                  feedList_.AddEntriesFrom(ref input, _repeated_feedList_codec);
                   break;
                 }
               }

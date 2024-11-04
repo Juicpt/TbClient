@@ -1,4 +1,4 @@
-﻿namespace TbClient.Api.GetForum;
+﻿namespace TbClient.Api.GetForum.Entities;
 
 public class Forum
 {

@@ -1,4 +1,4 @@
-﻿using TbClient.Api.Login;
+﻿using TbClient.Api.Login.Entities;
 using TbClient.Enums;
 
 namespace TbClient.Api.GetUInfoGetUserInfoApp.Entities;

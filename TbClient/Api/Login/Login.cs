@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using TbClient.Api.Login.Entities;
 using TbClient.core;
 using TbClient.Exceptions;
 

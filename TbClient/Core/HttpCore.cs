@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
+using System.Text;
 using TbClient.Core;
 
 namespace TbClient.core;
@@ -23,9 +24,11 @@ public class HttpCore
         {
             UseCookies = true,
             CookieContainer = new CookieContainer(),
+            AutomaticDecompression = DecompressionMethods.GZip
         };
 
         HttpClient = new HttpClient(handler);
+        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
     }
 
     private static void SetAppHeaders(HttpRequestMessage request)
@@ -42,6 +45,20 @@ public class HttpCore
         request.Headers.Accept.ParseAdd("*/*");
         request.Headers.Connection.Add("keep-alive");
         request.Headers.Add("Host", Const.AppBaseHost);
+    }
+
+    private static void SetWebHeaders(HttpRequestMessage request)
+    {
+        request.Headers.Add("User-Agent", $"aiotieba/{Const.Version}");
+        request.Headers.AcceptEncoding.ParseAdd("gzip");
+        request.Headers.AcceptEncoding.ParseAdd("deflate");
+        request.Headers.CacheControl = new CacheControlHeaderValue
+        {
+            NoCache = true
+        };
+        request.Headers.Connection.Add("keep-alive");
+        request.Headers.Accept.ParseAdd("*/*");
+
     }
 
     public void SetAccount(Account newAccount)
@@ -83,6 +100,7 @@ public class HttpCore
         var readAsStringAsync = await formUrlEncodedContent.ReadAsStringAsync();
         var builder = new UriBuilder(uri) { Query = readAsStringAsync };
         var request = new HttpRequestMessage(HttpMethod.Get, builder.Uri);
+        SetWebHeaders(request);
         return await HttpClient.SendAsync(request);
     }
 
