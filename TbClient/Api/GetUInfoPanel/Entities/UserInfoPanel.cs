@@ -46,7 +46,7 @@ public class UserInfoPanel : BaseUser
     /// <summary>
     /// 用户昵称
     /// </summary>
-    public new string NickName => NickNameNew;
+    public string NickName => NickNameNew;
 
     /// <summary>
     /// 显示名称

@@ -1,23 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <Id>TbClient</Id>
+        <Title>贴吧操作库</Title>
+        <Authors>Juicpt</Authors>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Authors>Juicpt</Authors>
         <UserSecretsId>8bd67551-0cb1-4639-b33c-d5f2f082615d</UserSecretsId>
-        <Version>0.0.3</Version>
+        <Version>0.0.4</Version>
         <Description>贴吧操作库</Description>
-        <PackageLicenseUrl>https://licenses.nuget.org/Unlicense</PackageLicenseUrl>
-        <RepositoryUrl>https://github.com/Juicpt/TbClient</RepositoryUrl>
+        <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/Juicpt/TbClient.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageProjectUrl>https://github.com/Juicpt/TbClient</PackageProjectUrl>
         <TargetFramework>net8.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Title>贴吧操作库</Title>
-        <PackageProjectUrl>https://github.com/Juicpt/TbClient</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <DebugType>none</DebugType>
+      <DebugType>full</DebugType>
       <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+      <DebugSymbols>true</DebugSymbols>
     </PropertyGroup>
 
     <ItemGroup>
@@ -25,6 +31,10 @@
       <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="System.IO.Hashing" Version="8.0.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
 </Project>
