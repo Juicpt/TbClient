@@ -1,16 +1,16 @@
-﻿# TbClient
+﻿# AioTieba4DotNet
 
 C#版本贴吧操作库
 
 ---
 
-[![NuGet version (TbClient)](https://img.shields.io/nuget/v/TbClient.svg?style=flat-square)](https://www.nuget.org/packages/TbClient/)
+[![NuGet version (AioTieba4DotNet)](https://img.shields.io/nuget/v/AioTieba4DotNet.svg?style=flat-square)](https://www.nuget.org/packages/AioTieba4DotNet/)
 
 ---
 
 ## 安装
 ``` shell
-dotnet add package TbClient
+dotnet add package AioTieba4DotNet
 ```
 
 ## 尝试一下
