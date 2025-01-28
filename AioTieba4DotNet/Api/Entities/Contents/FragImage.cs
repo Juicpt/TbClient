@@ -2,6 +2,9 @@
 
 namespace AioTieba4DotNet.Api.Entities.Contents;
 
+/// <summary>
+/// 图像碎片
+/// </summary>
 public partial class FragImage : IFrag
 {
     [GeneratedRegex("/([a-z0-9]{32,})\\.")]
@@ -9,14 +12,46 @@ public partial class FragImage : IFrag
 
     private static readonly Regex ImageHashExp = MyRegex();
 
-    public string Src { get; set; } = "";
-    public string BigSrc { get; set; } = "";
-    public string OriginSrc { get; set; } = "";
-    public uint OriginSize { get; set; } = 0;
-    public int ShowWidth { get; set; } = 0;
-    public int ShowHeight { get; set; } = 0;
-    public string Hash { get; set; } = "";
+    /// <summary>
+    /// 小图链接 宽720px 一定是静态图
+    /// </summary>
+    public string Src { get; init; } = "";
 
+    /// <summary>
+    /// 大图链接 宽960px
+    /// </summary>
+    public string BigSrc { get; init; } = "";
+
+    /// <summary>
+    /// 原图链接
+    /// </summary>
+    public string OriginSrc { get; init; } = "";
+
+    /// <summary>
+    /// 原图大小
+    /// </summary>
+    public uint OriginSize { get; init; }
+
+    /// <summary>
+    /// 图像在客户端预览显示的宽度
+    /// </summary>
+    public int ShowWidth { get; init; }
+
+    /// <summary>
+    /// 图像在客户端预览显示的高度
+    /// </summary>
+    public int ShowHeight { get; init; }
+
+    /// <summary>
+    /// 百度图床hash
+    /// </summary>
+    public string Hash { get; init; } = "";
+
+    /// <summary>
+    /// 从贴吧原始数据转换
+    /// </summary>
+    /// <param name="dataProto"></param>
+    /// <returns>FragImage</returns>
     public static FragImage FromTbData(PbContent dataProto)
     {
         var src = dataProto.CdnSrc;
@@ -42,8 +77,22 @@ public partial class FragImage : IFrag
         };
     }
 
+    /// <summary>
+    /// 碎片类型
+    /// </summary>
+    /// <returns>string</returns>
     public string GetFragType()
     {
         return "FragImage";
+    }
+
+    /// <summary>
+    /// 格式设置成员
+    /// </summary>
+    /// <returns>string</returns>
+    public override string ToString()
+    {
+        return
+            $"{nameof(Src)}: {Src}, {nameof(BigSrc)}: {BigSrc}, {nameof(OriginSrc)}: {OriginSrc}, {nameof(OriginSize)}: {OriginSize}, {nameof(ShowWidth)}: {ShowWidth}, {nameof(ShowHeight)}: {ShowHeight}, {nameof(Hash)}: {Hash}";
     }
 }

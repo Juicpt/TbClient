@@ -2,18 +2,69 @@
 
 namespace AioTieba4DotNet.Api.GetThreads.Entities;
 
+/// <summary>
+/// 内容碎片列表
+/// </summary>
 public class Content
 {
-    public List<FragText> Texts { get; set; } = [];
-    public List<FragEmoji> Emojis { get; set; } = [];
-    public List<FragImage> Images { get; set; } = [];
-    public List<FragAt> Ats { get; set; } = [];
-    public List<FragLink> Links { get; set; } = [];
-    public List<FragTiebaPlus> TiebaPluses { get; set; } = [];
-    public FragVideo? Video { get; set; }
-    public FragVoice? Voice { get; set; }
-    public List<IFrag> Frags { get; set; } = [];
+    /// <summary>
+    /// 文本内容
+    /// </summary>
+    public string Text
+    {
+        get { return Texts.Aggregate("", (current, t) => current + t.Text); }
+    }
 
+    /// <summary>
+    /// 纯文本碎片列表
+    /// </summary>
+    public List<FragText> Texts { get; private init; } = [];
+
+    /// <summary>
+    /// 表情碎片列表
+    /// </summary>
+    public List<FragEmoji> Emojis { get; init; } = [];
+
+    /// <summary>
+    /// 图像碎片列表
+    /// </summary>
+    public List<FragImage> Images { get; init; } = [];
+
+    /// <summary>
+    /// @碎片列表
+    /// </summary>
+    public List<FragAt> Ats { get; init; } = [];
+
+    /// <summary>
+    /// 链接碎片列表
+    /// </summary>
+    public List<FragLink> Links { get; init; } = [];
+
+    /// <summary>
+    /// 贴吧plus碎片列表
+    /// </summary>
+    public List<FragTiebaPlus> TiebaPluses { get; init; } = [];
+
+    /// <summary>
+    /// 视频碎片
+    /// </summary>
+    public FragVideo? Video { get; init; }
+
+    /// <summary>
+    /// 音频碎片
+    /// </summary>
+    public FragVoice? Voice { get; init; }
+
+    /// <summary>
+    /// 所有原始碎片
+    /// </summary>
+    public List<IFrag> Frags { get; init; } = [];
+
+    /// <summary>
+    /// 从贴吧原始数据转换
+    /// </summary>
+    /// <param name="threadInfo"></param>
+    /// <returns>Content</returns>
     public static Content FromTbData(ThreadInfo.Types.OriginThreadInfo threadInfo)
     {
         var texts = new List<FragText>();
@@ -105,12 +156,12 @@ public class Content
         }
 
 
-        if (threadInfo?.VideoInfo != null)
+        if (threadInfo.VideoInfo != null)
         {
             video = FragVideo.FromTbData(threadInfo.VideoInfo);
         }
 
-        if (threadInfo?.VoiceInfo is { Count: > 0 })
+        if (threadInfo.VoiceInfo is { Count: > 0 })
         {
             voice = FragVoice.FromTbData(threadInfo.VoiceInfo[0]);
         }
@@ -129,6 +180,11 @@ public class Content
         };
     }
 
+    /// <summary>
+    /// 从贴吧原始数据转换
+    /// </summary>
+    /// <param name="threadInfo"></param>
+    /// <returns>Content</returns>
     public static Content FromTbData(ThreadInfo threadInfo)
     {
         var texts = new List<FragText>();
@@ -220,12 +276,12 @@ public class Content
             }
         }
 
-        if (threadInfo?.VideoInfo != null)
+        if (threadInfo.VideoInfo != null)
         {
             video = FragVideo.FromTbData(threadInfo.VideoInfo);
         }
 
-        if (threadInfo?.VoiceInfo is { Count: > 0 })
+        if (threadInfo.VoiceInfo is { Count: > 0 })
         {
             voice = FragVoice.FromTbData(threadInfo.VoiceInfo[0]);
         }
@@ -242,5 +298,22 @@ public class Content
             Voice = voice,
             Video = video,
         };
+    }
+
+    /// <summary>
+    /// 格式设置
+    /// </summary>
+    /// <returns>string</returns>
+    public override string ToString()
+    {
+        var emojisString = Emojis.Aggregate("", (current, emoji) => current + (emoji + ", "));
+        var imageString = Images.Aggregate("", (current, image) => current + (image + ", "));
+        var atsString = Ats.Aggregate("", (current, at) => current + (at + ", "));
+        var linkString = Links.Aggregate("", (current, link) => current + (link + ", "));
+        var tiebaPlusString = TiebaPluses.Aggregate("", (current, tiebaPlus) => current + (tiebaPlus + ", "));
+        var fragString = Frags.Aggregate("", (current, frag) => current + (frag + ", "));
+
+        return
+            $"{nameof(Text)}: {Text},  {nameof(Emojis)}: {emojisString}, {nameof(Images)}: {imageString}, {nameof(Ats)}: {atsString}, {nameof(Links)}: {linkString}, {nameof(TiebaPluses)}: {tiebaPlusString}, {nameof(Video)}: {Video}, {nameof(Voice)}: {Voice}, {nameof(Frags)}: {fragString}";
     }
 }

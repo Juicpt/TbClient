@@ -7,7 +7,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <UserSecretsId>8bd67551-0cb1-4639-b33c-d5f2f082615d</UserSecretsId>
-        <Version>0.0.7</Version>
+        <Version>0.0.8</Version>
         <Description>贴吧操作库</Description>
         <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/BaWuZhuShou/AioTieba4DotNet.git</RepositoryUrl>
@@ -19,6 +19,7 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
         <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+        <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -37,6 +38,10 @@
     
     <ItemGroup>
         <None Include="../README.md" Pack="true" PackagePath="\"/>
+        <None Include="..\assets\icon.png">
+          <Pack>True</Pack>
+          <Link>icon.png</Link>
+        </None>
     </ItemGroup>
 
 </Project>
