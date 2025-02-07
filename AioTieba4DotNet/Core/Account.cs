@@ -2,9 +2,21 @@
 
 namespace AioTieba4DotNet.Core;
 
+/// <summary>
+/// 账户
+/// </summary>
+/// <param name="bduss">bduss</param>
+/// <param name="stoken">stoken</param>
 public class Account(string bduss = "", string stoken = "")
 {
+    /// <summary>
+    /// Bduss
+    /// </summary>
     public string Bduss { get; private set; } = bduss;
+
+    /// <summary>
+    /// Stoken
+    /// </summary>
     public string Stoken { get; private set; } = stoken;
 
     private string? _androidId;
@@ -17,35 +29,45 @@ public class Account(string bduss = "", string stoken = "")
     private byte[]? _aesCbcSecKey;
     private Aes? _aesCbcCipher;
 
+    /// <summary>
+    /// AndroidId
+    /// </summary>
     public string AndroidId
     {
         get => _androidId ??= BitConverter.ToString(RandomNumberGenerator.GetBytes(8)).Replace("-", "").ToLower();
         set => _androidId = value;
     }
 
+    /// <summary>
+    /// Uuid
+    /// </summary>
     public string Uuid
     {
         get => _uuid ??= Guid.NewGuid().ToString();
         set => _uuid = value;
     }
-
+    /// <summary>
+    /// tbs
+    /// </summary>
     public string? Tbs { get; set; }
-
-    public string? ClientId { get; set; }
-
-    public string? SampleId { get; set; }
-
-    public string? Cuid => _cuid ??= "baidutiebaapp" + Uuid;
-
+    
+    private string? ClientId { get; set; }
+    
+    private string? SampleId { get; set; }
+    
+    private string? Cuid => _cuid ??= "baidutiebaapp" + Uuid;
+    /// <summary>
+    /// CuidGalaxy2
+    /// </summary>
     public string CuidGalaxy2 => _cuidGalaxy2 ??= TbCrypto.CuidGalaxy2(AndroidId);
+    
+    private string? C3Aid => _c3Aid ??= TbCrypto.C3Aid(AndroidId, Uuid);
+    
+    private string? ZId { get; set; }
 
-    public string? C3Aid => _c3Aid ??= TbCrypto.C3Aid(AndroidId, Uuid);
+    private byte[] AesEcbSecKey => _aesEcbSecKey ??= RandomNumberGenerator.GetBytes(31);
 
-    public string? ZId { get; set; }
-
-    public byte[] AesEcbSecKey => _aesEcbSecKey ??= RandomNumberGenerator.GetBytes(31);
-
-    public Aes? AesEcbCipher
+    private Aes? AesEcbCipher
     {
         get
         {
@@ -74,7 +96,7 @@ public class Account(string bduss = "", string stoken = "")
             if (_aesCbcCipher != null) return _aesCbcCipher;
             var aes = Aes.Create();
             aes.Mode = CipherMode.CBC;
-            aes.Padding  = PaddingMode.None;
+            aes.Padding = PaddingMode.None;
             aes.Key = AesCbcSecKey;
             aes.IV = new byte[16];
             _aesCbcCipher = aes;

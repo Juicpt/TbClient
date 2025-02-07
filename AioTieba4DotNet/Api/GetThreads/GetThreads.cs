@@ -5,17 +5,21 @@ using Google.Protobuf;
 
 namespace AioTieba4DotNet.Api.GetThreads;
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="httpCore"></param>
 public class GetThreads(HttpCore httpCore)
 {
     private const int Cmd = 301001;
 
-    public static byte[] PackProto(string fname, int pn, int rn, int sort, int isGood)
+    private static byte[] PackProto(string fname, int pn, int rn, int sort, int isGood)
     {
         var frsPageResIdl = new FrsPageReqIdl()
         {
-            Data = new()
+            Data = new FrsPageReqIdl.Types.DataReq
             {
-                Common = new()
+                Common = new CommonReq
                 {
                     ClientType = 2,
                     ClientVersion = Const.MainVersion
@@ -45,7 +49,15 @@ public class GetThreads(HttpCore httpCore)
 
         return Threads.FromTbData(dataForum);
     }
-
+    /// <summary>
+    /// 异步请求
+    /// </summary>
+    /// <param name="fname">贴吧名</param>
+    /// <param name="pn">页码</param>
+    /// <param name="rn">每页条数</param>
+    /// <param name="sort">排序</param>
+    /// <param name="isGood">是否精品贴</param>
+    /// <returns></returns>
     public async Task<Threads> RequestAsync(string fname, int pn, int rn, int sort, int isGood)
     {
         var data = PackProto(fname, pn, rn, sort, isGood);

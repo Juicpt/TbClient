@@ -24,8 +24,15 @@ public class FragLink : IFrag
     /// 解析后的去前缀链接
     /// </summary>
     public Uri Url => IsExternal
-        ? new Uri(RawUrl.Query[(RawUrl.Query.IndexOf("url=", StringComparison.Ordinal) + 4)..])
+        ? new Uri(Uri.UnescapeDataString(GetQueryParam("url")))
         : RawUrl;
+
+    private string GetQueryParam(string key)
+    {
+        var query = RawUrl.Query;
+        var queryParams = System.Web.HttpUtility.ParseQueryString(query);
+        return queryParams[key] ?? string.Empty;
+    }
 
     /// <summary>
     /// 是否外部链接

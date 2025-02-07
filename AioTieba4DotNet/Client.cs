@@ -20,36 +20,69 @@ using AioTieba4DotNet.Enums;
 
 namespace AioTieba4DotNet;
 
+/// <summary>
+/// 客户端
+/// </summary>
 public class Client
 {
-    private Account? Account { get; set; }
-    private string? Bduss { get; set; }
+    /// <summary>
+    /// 账户
+    /// </summary>
+    private Account? Account { get; }
+
+    /// <summary>
+    /// Bduss
+    /// </summary>
+    private string? Bduss { get; }
+
+    /// <summary>
+    /// 登录用户信息
+    /// </summary>
     private UserInfoLogin? User { get; set; }
-    private string? Stoken { get; set; }
+
+    /// <summary>
+    /// stoken
+    /// </summary>
+    private string? Stoken { get; }
+
+    /// <summary>
+    /// http操作核心
+    /// </summary>
     private readonly HttpCore _httpCore;
 
-    private readonly ForumInfoCache _forumInfoCache = new ForumInfoCache();
+    /// <summary>
+    /// 贴吧数据缓存
+    /// </summary>
+    private readonly ForumInfoCache _forumInfoCache = new();
 
     /// <summary>
     /// 设置贴子获取时排序方法
     /// </summary>
-    public ThreadSortType ThreadSortType { get; set; } = ThreadSortType.REPLY;
+    public ThreadSortType ThreadSortType { get; init; } = ThreadSortType.REPLY;
 
     /// <summary>
     /// 设置获取贴子时，是否获取精品贴
     /// </summary>
-    public bool ThreadIsGood { get; set; }
+    public bool ThreadIsGood { get; init; }
 
     /// <summary>
     /// 设置获取贴子时，默认获取数量
     /// </summary>
-    public int ThreadRn { get; set; } = 30;
+    public int ThreadRn { get; init; } = 30;
 
+    /// <summary>
+    /// 无参构造函数
+    /// </summary>
     public Client()
     {
         _httpCore = new HttpCore();
     }
 
+    /// <summary>
+    /// 有参构造函数
+    /// </summary>
+    /// <param name="bduss"></param>
+    /// <param name="stoken"></param>
     public Client(string bduss, string stoken)
     {
         Bduss = bduss;
@@ -80,6 +113,11 @@ public class Client
         return forumId;
     }
 
+    /// <summary>
+    /// 根据贴吧ID获取贴吧名
+    /// </summary>
+    /// <param name="fid"></param>
+    /// <returns>贴吧名</returns>
     public async Task<string> GetFname(ulong fid)
     {
         var forumName = _forumInfoCache.GetForumName(fid);
@@ -99,7 +137,7 @@ public class Client
     /// 获取贴吧详细信息
     /// </summary>
     /// <param name="fid">fid</param>
-    /// <returns></returns>
+    /// <returns>ForumDetail</returns>
     public async Task<ForumDetail> GetForumDetail(ulong fid)
     {
         var getForumDetail = new GetForumDetail(_httpCore);
@@ -110,8 +148,8 @@ public class Client
     /// <summary>
     /// 获取贴吧详细信息
     /// </summary>
-    /// <param name="fname"></param>
-    /// <returns></returns>
+    /// <param name="fname">贴吧名</param>
+    /// <returns>ForumDetail</returns>
     public async Task<ForumDetail> GetForumDetail(string fname)
     {
         var fid = await GetFid(fname);
@@ -126,7 +164,7 @@ public class Client
     /// <param name="rn">请求的条目数. Defaults to 30. Max to 100.</param>
     /// <param name="sort"> HOT热门排序</param>
     /// <param name="isGood">True则获取精品区帖子 False则获取普通区帖子. Defaults to False.</param>
-    /// <returns></returns>
+    /// <returns>Threads</returns>
     public async Task<Threads> GetThreads(string fname, int pn, int rn, ThreadSortType sort, bool isGood)
     {
         var getThreads = new GetThreads(_httpCore);
@@ -282,6 +320,7 @@ public class Client
         var block = new Block(_httpCore);
         return await block.RequestAsync(fid, portrait, day, reason);
     }
+
     /// <summary>
     /// 封禁用户
     /// </summary>
@@ -297,7 +336,7 @@ public class Client
         var block = new Block(_httpCore);
         return await block.RequestAsync(fid, user.Portrait, day, reason);
     }
-    
+
     /// <summary>
     /// 封禁用户
     /// </summary>
@@ -314,7 +353,7 @@ public class Client
         var block = new Block(_httpCore);
         return await block.RequestAsync(fid, user.Portrait, day, reason);
     }
-    
+
     /// <summary>
     /// 封禁用户
     /// </summary>
@@ -333,6 +372,7 @@ public class Client
             var user = await GetUserInfo(userId);
             portrait = user.Portrait;
         }
+
         await _initTbs();
         var block = new Block(_httpCore);
         return await block.RequestAsync(fid, portrait, day, reason);

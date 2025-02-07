@@ -2,28 +2,97 @@
 
 namespace AioTieba4DotNet.Api.GetThreads.Entities;
 
+/// <summary>
+/// 用户信息
+/// </summary>
 public class UserInfoT
 {
-    public long UserId { get; set; }
-    public string UserName { get; set; } = "";
-    public string Portrait { get; set; } = "";
+    /// <summary>
+    /// user_id
+    /// </summary>
+    public long UserId { get; init; }
+
+    /// <summary>
+    /// portrait
+    /// </summary>
+    public string Portrait { get; init; } = "";
+
+    /// <summary>
+    /// 用户名
+    /// </summary>
+    public string UserName { get; init; } = "";
+
+    /// <summary>
+    /// 新版昵称
+    /// </summary>
     public string NickNameNew { get; init; } = "";
+
+    /// <summary>
+    /// 等级
+    /// </summary>
     public int Level { get; init; }
+
+    /// <summary>
+    /// 贴吧成长等级
+    /// </summary>
     public uint GLevel { get; init; }
+
+    /// <summary>
+    /// 性别
+    /// </summary>
     public Gender Gender { get; init; }
+
+    /// <summary>
+    /// 印记信息
+    /// </summary>
     public string[] Icons { get; init; } = [];
+
+    /// <summary>
+    /// 是否吧务
+    /// </summary>
     public bool IsBawu { get; init; }
+
+    /// <summary>
+    /// 是否超级会员
+    /// </summary>
     public bool IsVip { get; init; }
+
+    /// <summary>
+    /// 是否大神
+    /// </summary>
     public bool IsGod { get; init; }
+
+    /// <summary>
+    /// 关注吧列表的公开状态
+    /// </summary>
     public PrivLike PrivLike { get; init; }
+
+    /// <summary>
+    /// 帖子评论权限
+    /// </summary>
     public PrivReply PrivReply { get; init; }
 
+    /// <summary>
+    /// 用户昵称
+    /// </summary>
     public string NickName => NickNameNew;
+
+    /// <summary>
+    /// 显示名称
+    /// </summary>
     public string ShowName => NickNameNew == "" ? UserName : NickNameNew;
 
+    /// <summary>
+    /// 用于在日志中记录用户信息
+    /// </summary>
     public string LogName =>
         UserName != "" ? UserName : Portrait != "" ? $"{NickNameNew}/{Portrait}" : UserId.ToString();
 
+    /// <summary>
+    /// 从贴吧原始数据转换
+    /// </summary>
+    /// <param name="dataProto"></param>
+    /// <returns>UserInfoT</returns>
     public static UserInfoT FromTbData(User dataProto)
     {
         var portrait = dataProto.Portrait;
@@ -65,6 +134,10 @@ public class UserInfoT
         };
     }
 
+    /// <summary>
+    /// 格式设置
+    /// </summary>
+    /// <returns>string</returns>
     public override string ToString()
     {
         return
