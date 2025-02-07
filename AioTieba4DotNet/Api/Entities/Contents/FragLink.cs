@@ -68,6 +68,6 @@ public class FragLink : IFrag
     public override string ToString()
     {
         return
-            $"{nameof(Text)}: {Text}, {nameof(Title)}: {Title}, {nameof(RawUrl)}: {RawUrl}, {nameof(Url)}: {Url}, {nameof(IsExternal)}: {IsExternal}";
+            $"{GetFragType()} {nameof(Text)}: {Text}, {nameof(Title)}: {Title}, {nameof(RawUrl)}: {RawUrl}, {nameof(Url)}: {Url}, {nameof(IsExternal)}: {IsExternal}";
     }
 }

@@ -29,12 +29,13 @@ public class FragText : IFrag
     {
         return "FragText";
     }
+
     /// <summary>
     /// 格式设置成员
     /// </summary>
     /// <returns>string</returns>
     public override string ToString()
     {
-        return $"{nameof(Text)}: {Text}";
+        return $"{GetFragType()} {nameof(Text)}: {Text}";
     }
 }

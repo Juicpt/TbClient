@@ -51,6 +51,6 @@ public class FragVoice : IFrag
     /// <returns>string</returns>
     public override string ToString()
     {
-        return $"{nameof(Md5)}: {Md5}, {nameof(Duration)}: {Duration}";
+        return $"{GetFragType()} {nameof(Md5)}: {Md5}, {nameof(Duration)}: {Duration}";
     }
 }

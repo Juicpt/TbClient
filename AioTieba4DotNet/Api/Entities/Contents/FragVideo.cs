@@ -84,6 +84,6 @@ public class FragVideo : IFrag
     public override string ToString()
     {
         return
-            $"{nameof(Src)}: {Src}, {nameof(CoverSrc)}: {CoverSrc}, {nameof(Duration)}: {Duration}, {nameof(Width)}: {Width}, {nameof(Height)}: {Height}, {nameof(ViewNum)}: {ViewNum}";
+            $"{GetFragType()} {nameof(Src)}: {Src}, {nameof(CoverSrc)}: {CoverSrc}, {nameof(Duration)}: {Duration}, {nameof(Width)}: {Width}, {nameof(Height)}: {Height}, {nameof(ViewNum)}: {ViewNum}";
     }
 }

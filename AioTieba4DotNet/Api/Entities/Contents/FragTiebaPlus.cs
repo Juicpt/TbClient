@@ -42,6 +42,6 @@ public class FragTiebaPlus : IFrag
     /// <returns>string</returns>
     public override string ToString()
     {
-        return $"{nameof(Text)}: {Text}, {nameof(Url)}: {Url}";
+        return $"{GetFragType()} {nameof(Text)}: {Text}, {nameof(Url)}: {Url}";
     }
 }

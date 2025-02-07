@@ -93,6 +93,6 @@ public partial class FragImage : IFrag
     public override string ToString()
     {
         return
-            $"{nameof(Src)}: {Src}, {nameof(BigSrc)}: {BigSrc}, {nameof(OriginSrc)}: {OriginSrc}, {nameof(OriginSize)}: {OriginSize}, {nameof(ShowWidth)}: {ShowWidth}, {nameof(ShowHeight)}: {ShowHeight}, {nameof(Hash)}: {Hash}";
+            $"{GetFragType()} {nameof(Src)}: {Src}, {nameof(BigSrc)}: {BigSrc}, {nameof(OriginSrc)}: {OriginSrc}, {nameof(OriginSize)}: {OriginSize}, {nameof(ShowWidth)}: {ShowWidth}, {nameof(ShowHeight)}: {ShowHeight}, {nameof(Hash)}: {Hash}";
     }
 }

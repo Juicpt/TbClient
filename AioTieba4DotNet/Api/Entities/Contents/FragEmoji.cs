@@ -42,6 +42,6 @@ public class FragEmoji : IFrag
     /// <returns>string</returns>
     public override string ToString()
     {
-        return $"{nameof(Id)}: {Id}, {nameof(Desc)}: {Desc}";
+        return $"{GetFragType()} {nameof(Id)}: {Id}, {nameof(Desc)}: {Desc}";
     }
 }

@@ -36,6 +36,6 @@ public class FragItem : IFrag
     /// <returns>string</returns>
     public override string ToString()
     {
-        return $"{nameof(Text)}: {Text}";
+        return $"{GetFragType()} {nameof(Text)}: {Text}";
     }
 }
